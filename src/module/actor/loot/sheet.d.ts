@@ -1,0 +1,25 @@
+import { LootPF2e } from "#actor";
+import { ActorSheetDataPF2e, InventoryItem, SheetInventory } from "#actor/sheet/data-types.js";
+import { FormSelectOption } from "#client/applications/forms/fields.mjs";
+import { ActorSheetOptions } from "#client/appv1/sheets/actor-sheet.mjs";
+import { ActorSchema } from "#common/documents/actor.mjs";
+import { PhysicalItemPF2e } from "#item";
+import { ActorSheetPF2e } from "../sheet/base.js";
+import { LootSystemSchema } from "./data.js";
+export declare class LootSheetPF2e<TActor extends LootPF2e> extends ActorSheetPF2e<TActor> {
+    static get defaultOptions(): ActorSheetOptions;
+    get template(): string;
+    getData(): Promise<LootSheetDataPF2e<TActor>>;
+    activateListeners($html: JQuery): void;
+    protected prepareInventory(): SheetInventory;
+    /** Hide coin item rows in merchant actors */
+    protected prepareInventoryItem(item: PhysicalItemPF2e): InventoryItem;
+}
+interface LootSheetDataPF2e<TActor extends LootPF2e> extends ActorSheetDataPF2e<TActor> {
+    hasActiveParty: boolean;
+    isLoot: boolean;
+    fields: ActorSchema;
+    systemFields: LootSystemSchema;
+    lootSheetTypeOptions: FormSelectOption[];
+}
+export {};

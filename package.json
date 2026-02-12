@@ -1,0 +1,39 @@
+{
+    "name": "pf2e-types",
+    "version": "1.0.0",
+    "type": "module",
+    "sideEffects": false,
+    "scripts": {
+        "tsc": "tsc",
+        "eslint": "eslint .",
+        "eslint:fix": "eslint . --fix && prettier . --write"
+    },
+    "imports": {
+        "#actor": "./src/module/actor/index.js",
+        "#actor/*": "./src/module/actor/*",
+        "#item": "./src/module/item/index.js",
+        "#item/*": "./src/module/item/*",
+        "#scene": "./src/module/scene/index.js",
+        "#scene/*": "./src/module/scene/*",
+        "#system/*": "./src/module/system/*",
+        "#module/*": "./src/module/*",
+        "#scripts/*": "./src/scripts/*",
+        "#common/*": "foundry-types/common/*",
+        "#client/*": "foundry-types/client/*",
+        "#util": "./src/util/index.js",
+        "#util/*": "./src/util/*"
+    },
+    "devDependencies": {
+        "@eslint/json": "^0.14.0",
+        "eslint": "^9.39.2",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.5",
+        "glob": "^13.0.2",
+        "prettier-plugin-organize-imports": "^4.3.0",
+        "typescript": "5.9.3",
+        "typescript-eslint": "8.54.0"
+    },
+    "dependencies": {
+        "foundry-types": "github:7H3LaughingMan/foundry-types"
+    }
+}

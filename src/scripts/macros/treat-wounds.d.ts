@@ -1,0 +1,19 @@
+import { ActorPF2e } from "#actor";
+import { ChatMessagePF2e } from "#module/chat-message/index.js";
+import { ActionDefaultOptions } from "#system/action-macros/index.js";
+import { DegreeOfSuccessString } from "#system/degree-of-success.js";
+declare function treatWounds(options: ActionDefaultOptions): Promise<void>;
+declare function treatWoundsMacroCallback({
+    actor,
+    bonus,
+    message,
+    originalMessageId,
+    outcome,
+}: {
+    actor: ActorPF2e;
+    bonus: number;
+    message: ChatMessagePF2e;
+    originalMessageId?: string;
+    outcome?: DegreeOfSuccessString | null;
+}): Promise<void>;
+export { treatWounds, treatWoundsMacroCallback };

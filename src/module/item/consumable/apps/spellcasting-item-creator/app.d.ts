@@ -1,0 +1,34 @@
+import { ActorPF2e } from "#actor";
+import { SpellPF2e } from "#item/spell/document.js";
+import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/sheet/mixin.svelte.js";
+import fapi = foundry.applications.api;
+
+/** An application to create a scroll or wand out of a spell */
+declare class SpellcastingItemCreator extends SvelteApplicationMixin(fapi.ApplicationV2) {
+    #private;
+    static DEFAULT_OPTIONS: DeepPartial<CreateSpellConsumableConfiguration>;
+    root: import("svelte/legacy").LegacyComponentType;
+    constructor(options: CreateSpellConsumableConfiguration);
+    protected _prepareContext(options: fa.ApplicationRenderOptions): Promise<CreateSpellConsumableContext>;
+}
+
+interface CreateSpellConsumableConfiguration extends DeepPartial<fa.ApplicationConfiguration> {
+    actor: ActorPF2e;
+    /** The spell we're creating the scroll/wand for */
+    spell: SpellPF2e;
+    /** The initial setting for whether or not to hide the created item's identification */
+    mystified?: boolean;
+}
+
+interface CreateSpellConsumableContext extends SvelteApplicationRenderContext {
+    foundryApp: SpellcastingItemCreator;
+    state: {
+        name: string;
+        isCantrip: boolean;
+        minimumRank: number;
+        initialMystified: boolean;
+    };
+}
+
+export { SpellcastingItemCreator };
+export type { CreateSpellConsumableContext };
