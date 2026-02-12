@@ -53,6 +53,7 @@ interface RuleElementFormSheetData<TSource extends RuleElementSource, TObject ex
     basePath: string;
     fields: RuleElementSchema | undefined;
     /** A collection of additional handlebars functions */
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
     form: Record<string, Function>;
     validationFailures: string[];
     hiddenFields: string[];

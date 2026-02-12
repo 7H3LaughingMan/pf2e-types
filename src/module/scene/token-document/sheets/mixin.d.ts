@@ -165,7 +165,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
               }
             | undefined,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ): Promise</*elided*/ any>;
+    ): Promise</* elided*/ any>;
     _prepareTabs(group: string): Record<string, fa.ApplicationTab>;
     _getTabsConfig(group: string): fa.ApplicationTabsConfiguration | null;
     _getHeaderControls(): fa.ApplicationHeaderControlsEntry[];
@@ -175,7 +175,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
     _updateFrame(options: fa.ApplicationRenderOptions): void;
     _insertElement(element: HTMLElement): void;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    close(options?: fa.ApplicationClosingOptions): Promise</*elided*/ any>;
+    close(options?: fa.ApplicationClosingOptions): Promise</* elided*/ any>;
     _removeElement(element: HTMLElement): void;
     _tearDown(options: fa.ApplicationClosingOptions): void;
     setPosition(position?: Partial<fa.ApplicationPosition>): fa.ApplicationPosition;
@@ -395,7 +395,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
               }
             | undefined,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ): Promise</*elided*/ any>;
+    ): Promise</* elided*/ any>;
     _prepareTabs(group: string): Record<string, fa.ApplicationTab>;
     _getTabsConfig(group: string): fa.ApplicationTabsConfiguration | null;
     _getHeaderControls(): fa.ApplicationHeaderControlsEntry[];
@@ -405,7 +405,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
     _updateFrame(options: fa.ApplicationRenderOptions): void;
     _insertElement(element: HTMLElement): void;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    close(options?: fa.ApplicationClosingOptions): Promise</*elided*/ any>;
+    close(options?: fa.ApplicationClosingOptions): Promise</* elided*/ any>;
     _removeElement(element: HTMLElement): void;
     _tearDown(options: fa.ApplicationClosingOptions): void;
     setPosition(position?: Partial<fa.ApplicationPosition>): fa.ApplicationPosition;

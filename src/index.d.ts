@@ -1,4 +1,5 @@
 import "foundry-types/global-external.d.mts";
+import "./global-functions.d.ts";
 import "./global.d.ts";
 
 export type { ActionCost } from "./module/item/base/data/system.d.ts";

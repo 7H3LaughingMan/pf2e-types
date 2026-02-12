@@ -8,6 +8,10 @@
         "eslint": "eslint .",
         "eslint:fix": "eslint . --fix && prettier . --write"
     },
+    "exports": {
+        ".": "./src/index.d.ts",
+        "./*": "./src/*"
+    },
     "imports": {
         "#actor": "./src/module/actor/index.js",
         "#actor/*": "./src/module/actor/*",

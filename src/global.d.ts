@@ -4,6 +4,7 @@ import { AutomaticBonusProgression as ABP } from "#actor/character/automatic-bon
 import { ElementalBlast } from "#actor/character/elemental-blast.js";
 import { FeatGroupData } from "#actor/character/feats/index.js";
 import { CheckModifier, Modifier, ModifierType, StatisticModifier } from "#actor/modifiers.js";
+import { SettingConfig } from "#client/_types.mjs";
 import { default as Hotbar } from "#client/applications/ui/hotbar.mjs";
 import { default as Config } from "#client/config.mjs";
 import { default as WallDocument } from "#client/documents/wall.mjs";
@@ -174,6 +175,7 @@ export interface GamePF2e extends Game<
     UserPF2e
 > {
     pf2e: {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
         actions: Record<string, Function> & Collection<string, Action>;
         compendiumBrowser: CompendiumBrowser;
         worldClock: WorldClock;
@@ -345,6 +347,7 @@ declare global {
             EncounterTracker<EncounterPF2e | null>,
             Hotbar<MacroPF2e>
         >;
+        // eslint-disable-next-line no-var
         var AutomaticBonusProgression: typeof ABP;
         interface Math {
             btwn: (v: number, lte: number, gte: number) => boolean;
@@ -360,4 +363,13 @@ declare global {
         }
     }
 }
+
+declare module "foundry-types/client/helpers/client-settings.mjs" {
+    interface ClientSettingsMap {
+        get(key: "pf2e.worldClock"): SettingConfig & {
+            default: WorldClockSettingData;
+        };
+    }
+}
+
 export {};

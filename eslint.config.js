@@ -18,7 +18,14 @@ export default defineConfig(
             parserOptions: { project: "./tsconfig.json" },
         },
         rules: {
-            ...tseslint.configs.recommended.rules,
+            ...ts.configs["recommended"].rules,
+            eqeqeq: "error",
+            "prettier/prettier": "error",
+            "no-console": "off",
+            "no-plusplus": ["error", { allowForLoopAfterthoughts: true }],
+            "no-unused-expressions": ["error", { allowShortCircuit: true }],
+            "no-var": "error",
+            "spaced-comment": ["error", "always", { markers: ["/"] }],
             "@typescript-eslint/array-type": ["error", { default: "array" }],
             "@typescript-eslint/await-thenable": "error",
             "@typescript-eslint/ban-ts-comment": "error",
@@ -40,5 +47,11 @@ export default defineConfig(
                 },
             ],
         },
+    },
+    {
+        files: ["**/*.json"],
+        ignores: ["package-lock.json"],
+        language: "json/json",
+        rules: json.configs.recommended.rules,
     },
 );
