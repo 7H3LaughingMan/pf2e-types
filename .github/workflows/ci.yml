@@ -17,6 +17,6 @@ jobs:
         with:
           use-cache: true
 
-      - run: npm run tsc .
+      - run: npm run tsc
 
       - run: npm run eslint
