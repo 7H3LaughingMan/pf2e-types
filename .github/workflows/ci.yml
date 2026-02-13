@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Setup Node
         id: setup-node
-        uses: 7H3LaughingMan/pf2e-types/.github/actions/setup-node.yml@v13
+        uses: ./.github/actions/setup-node
         with:
           use-cache: true
 
