@@ -1,4 +1,5 @@
 name: Update Foundry Types
+run-name: Update Foundry Types
 
 on:
   repository_dispatch:
