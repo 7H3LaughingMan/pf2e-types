@@ -5,12 +5,11 @@
     "sideEffects": false,
     "scripts": {
         "tsc": "tsc",
-        "eslint": "eslint .",
-        "eslint:fix": "eslint . --fix && prettier . --write"
+        "eslint": "eslint src",
+        "eslint:fix": "eslint src --fix && prettier src --write"
     },
     "exports": {
         ".": "./src/index.d.ts",
-        "./foundry": "./src/foundry-types.d.ts",
         "./module/*": "./src/module/*",
         "./scripts/*": "./src/scripts/*",
         "./utils/*": "./src/utils/*"

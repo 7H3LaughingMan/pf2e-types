@@ -10,10 +10,12 @@ jobs:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Setup Node
         id: setup-node
-        uses: ./.github/actions/setup-node
+        uses: 7H3LaughingMan/pf2e-types/.github/actions/setup-node@v13
         with:
           use-cache: true
 
