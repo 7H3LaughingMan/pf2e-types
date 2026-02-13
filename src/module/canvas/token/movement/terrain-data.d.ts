@@ -1,5 +1,4 @@
-import { TokenMeasureMovementPathOptions } from "#client/_types.mjs";
-import { TokenMovementCostFunction } from "#client/documents/_types.mjs";
+import { TokenMeasureMovementPathOptions, TokenMovementCostFunction } from "#client/documents/_types.mjs";
 import { TokenDocumentPF2e } from "#scene";
 export declare class TerrainDataPF2e extends foundry.data.TerrainData {
     #private;
