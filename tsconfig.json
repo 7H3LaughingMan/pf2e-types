@@ -3,10 +3,17 @@
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "bundler",
-        "lib": ["ESNext", "DOM"],
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
         "noEmit": true,
         "strict": true,
         "allowImportingTsExtensions": true,
-        "types": ["jquery", "tooltipster"]
+        "types": [
+            "./src",
+            "jquery",
+            "tooltipster"
+        ]
     }
 }

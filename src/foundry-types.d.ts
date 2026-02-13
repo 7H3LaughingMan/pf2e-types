@@ -1,1 +1,1 @@
-export type * from "foundry-types/global-exports.d.ts";
+export type * from "foundry-types/global-exports";
