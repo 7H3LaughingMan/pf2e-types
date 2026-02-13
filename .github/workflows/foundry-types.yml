@@ -26,17 +26,16 @@ jobs:
         id: update
         run: npm update foundry-types
 
-      - name: Setup Git
-        id: setup-git
+      - name: Commit Files
+        id: commit-files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -a -m "Updating foundry-types"
 
-      - name: Stage, Commit, Push
-        id: stage-commit-push
-        run: |
-          git add .
-          git commit -m "Updating foundry-types"
-          git push origin HEAD:${GITHUB_REF}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Files
+        id: push-files
+        uses: ad-m/github-push-action@v1.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
