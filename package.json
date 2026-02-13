@@ -10,8 +10,10 @@
     },
     "exports": {
         ".": "./src/index.d.ts",
-        "./*": "./src/*",
-        "./foundry": "./src/foundry-types.d.ts"
+        "./foundry": "./src/foundry-types.d.ts",
+        "./module/*": "./src/module/*",
+        "./scripts/*": "./src/scripts/*",
+        "./utils/*": "./src/utils/*"
     },
     "imports": {
         "#actor": "./src/module/actor/index.js",
