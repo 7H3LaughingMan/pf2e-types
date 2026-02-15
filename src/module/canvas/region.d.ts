@@ -4,7 +4,6 @@ import { RegionDocumentPF2e } from "#scene/region-document/document.js";
 /** Add support for drag/drop repositioning of regions. */
 declare class RegionPF2e<TDocument extends RegionDocumentPF2e = RegionDocumentPF2e> extends fc.placeables.Region<TDocument> {
     static RENDER_FLAGS: {
-        // eslint-disable-next-line @typescript-eslint/no-empty-object-type
         refreshPosition: {};
         redraw: {
             propagate: ["refresh"];

@@ -1,19 +1,19 @@
 {
-    "name": "pf2e-types",
-    "version": "1.0.0",
+    "name": "@7h3laughingman/pf2e-types",
+    "version": "7.10.0",
+    "description": "Basic TypeScript types for PF2e",
+    "homepage": "https://github.com/7H3LaughingMan/pf2e-types#readme",
+    "bugs": {
+        "url": "https://github.com/7H3LaughingMan/pf2e-types/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/7H3LaughingMan/pf2e-types.git"
+    },
+    "license": "MIT",
+    "author": "7H3LaughingMan <7H3LaughingMan@proton.me> (https://github.com/7H3LaughingMan)",
+    "funding": "https://ko-fi.com/7h3laughingman",
     "type": "module",
-    "sideEffects": false,
-    "scripts": {
-        "tsc": "tsc",
-        "eslint": "eslint src",
-        "eslint:fix": "eslint src --fix && prettier src --write"
-    },
-    "exports": {
-        ".": "./src/index.d.ts",
-        "./module/*": "./src/module/*",
-        "./scripts/*": "./src/scripts/*",
-        "./utils/*": "./src/utils/*"
-    },
     "imports": {
         "#actor": "./src/module/actor/index.js",
         "#actor/*": "./src/module/actor/*",
@@ -24,10 +24,37 @@
         "#system/*": "./src/module/system/*",
         "#module/*": "./src/module/*",
         "#scripts/*": "./src/scripts/*",
-        "#common/*": "foundry-types/common/*",
-        "#client/*": "foundry-types/client/*",
+        "#common/*": "@7h3laughingman/foundry-types/common/*",
+        "#client/*": "@7h3laughingman/foundry-types/client/*",
         "#util": "./src/util/index.js",
         "#util/*": "./src/util/*"
+    },
+    "exports": {
+        ".": "./src/index.d.ts",
+        "./module/*": "./src/module/*",
+        "./scripts/*": "./src/scripts/*",
+        "./utils/*": "./src/utils/*"
+    },
+    "files": [
+        "./src/*",
+        "./static/*"
+    ],
+    "scripts": {
+        "tsc": "tsc",
+        "eslint": "eslint src",
+        "eslint:fix": "eslint src --fix && prettier src --write"
+    },
+    "dependencies": {
+        "@7h3laughingman/foundry-types": "~13.351",
+        "@types/luxon": "^3.7.1",
+        "@types/sortablejs": "^1.15.9",
+        "@types/tooltipster": "^0.0.35",
+        "@types/yaireo__tagify": "4.17.0",
+        "@yaireo/tagify": "4.16.4",
+        "luxon": "^3.7.2",
+        "minisearch": "^7.2.0",
+        "sortablejs": "^1.15.6",
+        "svelte": "^5.40.1"
     },
     "devDependencies": {
         "@eslint/js": "^9.39.2",
@@ -40,7 +67,8 @@
         "typescript": "5.9.3",
         "typescript-eslint": "^8.55.0"
     },
-    "dependencies": {
-        "foundry-types": "github:7H3LaughingMan/foundry-types"
-    }
+    "engines": {
+        "node": ">=24"
+    },
+    "sideEffects": false
 }

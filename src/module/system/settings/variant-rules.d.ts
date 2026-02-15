@@ -1,5 +1,5 @@
+import { ApplicationConfiguration } from "#client/applications/_types.mjs";
 import { SettingRegistration } from "#client/helpers/client-settings.mjs";
-import { ApplicationConfiguration } from "foundry-types/client/applications/_types.mjs";
 import fields = foundry.data.fields;
 
 export declare class VariantRulesSettings extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {

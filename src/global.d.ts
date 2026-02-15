@@ -175,7 +175,6 @@ export interface GamePF2e extends Game<
     UserPF2e
 > {
     pf2e: {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
         actions: Record<string, Function> & Collection<string, Action>;
         compendiumBrowser: CompendiumBrowser;
         worldClock: WorldClock;

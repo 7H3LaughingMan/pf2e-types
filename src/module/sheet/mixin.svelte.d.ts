@@ -16,7 +16,6 @@ declare function SvelteApplicationMixin<
 declare abstract class SvelteApplication extends fa.api.ApplicationV2 {
     static override DEFAULT_OPTIONS: DeepPartial<fa.ApplicationConfiguration>;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     protected abstract root: svelte.Component<any>;
 
     /** State data tracked by the root component */

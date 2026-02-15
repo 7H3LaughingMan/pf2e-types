@@ -1,4 +1,4 @@
-import "foundry-types/global-external";
+import "@7h3laughingman/foundry-types/global-external";
 import "./global-functions.d.ts";
 import "./global.d.ts";
 

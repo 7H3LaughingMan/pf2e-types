@@ -8,7 +8,6 @@ import { TokenDocumentPF2e } from "../document.js";
 import { PrototypeTokenConfigPF2e } from "./prototype-config.js";
 declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenApplicationMixin>>(
     Base: TBase,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): ((abstract new (...args: any[]) => (abstract new (...args: any[]) => {
     _preview: TokenDocument | foundry.data.PrototypeToken<Actor> | null;
     isPrototype: boolean;
@@ -110,10 +109,9 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
             | undefined;
         actions?:
             | {
-                  [x: string]: // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+                  [x: string]:
                       | {}
                       | {
-                            // eslint-disable-next-line @typescript-eslint/no-empty-object-type
                             handler?: {} | undefined;
                             buttons?: number[] | undefined;
                         }
@@ -122,7 +120,6 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
             | undefined;
         form?:
             | {
-                  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
                   handler?: {} | undefined;
                   submitOnChange?: boolean | undefined;
                   closeOnSubmit?: boolean | undefined;
@@ -164,7 +161,6 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
                   isFirstRender?: boolean | undefined;
               }
             | undefined,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ): Promise</* elided*/ any>;
     _prepareTabs(group: string): Record<string, fa.ApplicationTab>;
     _getTabsConfig(group: string): fa.ApplicationTabsConfiguration | null;
@@ -174,7 +170,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
     _renderHeaderControl(control: fa.ApplicationHeaderControlsEntry): HTMLLIElement;
     _updateFrame(options: fa.ApplicationRenderOptions): void;
     _insertElement(element: HTMLElement): void;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     close(options?: fa.ApplicationClosingOptions): Promise</* elided*/ any>;
     _removeElement(element: HTMLElement): void;
     _tearDown(options: fa.ApplicationClosingOptions): void;
@@ -340,10 +336,9 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
             | undefined;
         actions?:
             | {
-                  [x: string]: // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+                  [x: string]:
                       | {}
                       | {
-                            // eslint-disable-next-line @typescript-eslint/no-empty-object-type
                             handler?: {} | undefined;
                             buttons?: number[] | undefined;
                         }
@@ -352,7 +347,6 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
             | undefined;
         form?:
             | {
-                  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
                   handler?: {} | undefined;
                   submitOnChange?: boolean | undefined;
                   closeOnSubmit?: boolean | undefined;
@@ -394,7 +388,6 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
                   isFirstRender?: boolean | undefined;
               }
             | undefined,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ): Promise</* elided*/ any>;
     _prepareTabs(group: string): Record<string, fa.ApplicationTab>;
     _getTabsConfig(group: string): fa.ApplicationTabsConfiguration | null;
@@ -404,7 +397,7 @@ declare function TokenConfigMixinPF2e<TBase extends ReturnType<typeof TokenAppli
     _renderHeaderControl(control: fa.ApplicationHeaderControlsEntry): HTMLLIElement;
     _updateFrame(options: fa.ApplicationRenderOptions): void;
     _insertElement(element: HTMLElement): void;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     close(options?: fa.ApplicationClosingOptions): Promise</* elided*/ any>;
     _removeElement(element: HTMLElement): void;
     _tearDown(options: fa.ApplicationClosingOptions): void;

@@ -49,7 +49,6 @@ declare class TokenPF2e<TDocument extends TokenDocumentPF2e = TokenDocumentPF2e>
         refreshRingVisuals: object;
         recoverFromPreview: object;
     } & {
-        // eslint-disable-next-line @typescript-eslint/no-empty-object-type
         refreshDistanceLabel: {};
     };
     /** Visual representation and proximity-detection facilities for auras */
