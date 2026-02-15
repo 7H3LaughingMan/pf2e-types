@@ -30,10 +30,7 @@
         "#util/*": "./src/util/*"
     },
     "exports": {
-        ".": {
-            "types": "./src/index.d.ts",
-            "default": "./src/index.d.ts"
-        },
+        ".": "./src/index.d.ts",
         "./module/*": "./src/module/*",
         "./scripts/*": "./src/scripts/*",
         "./utils/*": "./src/utils/*"
