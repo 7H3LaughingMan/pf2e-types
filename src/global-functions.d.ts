@@ -1,5 +1,4 @@
 import { ActorPF2e } from "#actor/base.js";
-import { DocumentType } from "#common/constants.mjs";
 import { ItemPF2e } from "#item/base/document.js";
 import { ActiveEffectPF2e } from "#module/active-effect.js";
 import { MeasuredTemplatePF2e } from "#module/canvas/measured-template.js";
@@ -53,5 +52,5 @@ declare global {
         Wall: typeof foundry.documents.WallDocument;
     };
 
-    function getDocumentClass<K extends DocumentType>(name: K): DocumentTypeMap[K];
+    function getDocumentClass<K extends keyof DocumentTypeMap>(name: K): DocumentTypeMap[K];
 }
