@@ -64,9 +64,9 @@
         "svelte": "^5.40.1"
     },
     "devDependencies": {
-        "@eslint/js": "^9.39.2",
-        "@eslint/json": "^0.14.0",
-        "eslint": "^9.39.2",
+        "@eslint/js": "^10.0.1",
+        "@eslint/json": "^1.0.1",
+        "eslint": "^10.0.1",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-prettier": "^5.5.5",
         "glob": "^13.0.3",
