@@ -11,27 +11,126 @@ importers:
       '@7h3laughingman/foundry-types':
         specifier: ~13.351
         version: 13.351.19(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)
+      '@codemirror/lang-html':
+        specifier: ^6.4.11
+        version: 6.4.11
+      '@codemirror/lang-javascript':
+        specifier: ^6.2.4
+        version: 6.2.4
+      '@codemirror/lang-json':
+        specifier: ^6.0.2
+        version: 6.0.2
+      '@codemirror/lang-markdown':
+        specifier: ^6.5.0
+        version: 6.5.0
+      '@codemirror/state':
+        specifier: ^6.5.4
+        version: 6.5.4
+      '@pixi/graphics-smooth':
+        specifier: ^1.1.1
+        version: 1.1.1(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))
+      '@pixi/particle-emitter':
+        specifier: ^5.0.10
+        version: 5.0.10(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)
+      '@types/jquery':
+        specifier: ^3.5.34
+        version: 3.5.34
       '@types/luxon':
         specifier: ^3.7.1
         version: 3.7.1
+      '@types/simple-peer':
+        specifier: ^9.11.9
+        version: 9.11.9
       '@types/sortablejs':
         specifier: ^1.15.9
         version: 1.15.9
       '@types/tooltipster':
         specifier: ^0.0.35
         version: 0.0.35
+      '@types/ws':
+        specifier: ^8.18.1
+        version: 8.18.1
       '@types/yaireo__tagify':
         specifier: 4.17.0
         version: 4.17.0
       '@yaireo/tagify':
         specifier: 4.16.4
         version: 4.16.4(prop-types@15.8.1)
+      codemirror:
+        specifier: ^6.0.2
+        version: 6.0.2
+      gsap:
+        specifier: 3.11.0
+        version: 3.11.0
+      handlebars:
+        specifier: ^4.7.8
+        version: 4.7.8
+      jquery:
+        specifier: ^3.7.1
+        version: 3.7.1
       luxon:
         specifier: ^3.7.2
         version: 3.7.2
       minisearch:
         specifier: ^7.2.0
         version: 7.2.0
+      peggy:
+        specifier: ^4.2.0
+        version: 4.2.0
+      pixi.js:
+        specifier: ^7.4.3
+        version: 7.4.3
+      prosemirror-collab:
+        specifier: ^1.3.1
+        version: 1.3.1
+      prosemirror-commands:
+        specifier: ^1.7.1
+        version: 1.7.1
+      prosemirror-dropcursor:
+        specifier: ^1.8.2
+        version: 1.8.2
+      prosemirror-gapcursor:
+        specifier: ^1.4.0
+        version: 1.4.0
+      prosemirror-history:
+        specifier: ^1.5.0
+        version: 1.5.0
+      prosemirror-inputrules:
+        specifier: ^1.5.1
+        version: 1.5.1
+      prosemirror-keymap:
+        specifier: ^1.2.3
+        version: 1.2.3
+      prosemirror-model:
+        specifier: ^1.25.4
+        version: 1.25.4
+      prosemirror-schema-list:
+        specifier: ^1.5.1
+        version: 1.5.1
+      prosemirror-state:
+        specifier: ^1.4.4
+        version: 1.4.4
+      prosemirror-tables:
+        specifier: ^1.8.5
+        version: 1.8.5
+      prosemirror-transform:
+        specifier: ^1.11.0
+        version: 1.11.0
+      prosemirror-view:
+        specifier: ^1.41.6
+        version: 1.41.6
+      showdown:
+        specifier: ^2.1.0
+        version: 2.1.0
+      simple-peer:
+        specifier: ^9.11.1
+        version: 9.11.1
+      socket.io:
+        specifier: ^4.8.3
+        version: 4.8.3
+      socket.io-client:
+        specifier: ^4.8.3
+        version: 4.8.3
       sortablejs:
         specifier: ^1.15.6
         version: 1.15.7
@@ -471,9 +570,6 @@ packages:
 
   '@types/jquery@3.5.34':
     resolution: {integrity: sha512-3m3939S3erqmTLJANS/uy0B6V7BorKx7RorcGZVjZ62dF5PAGbKEDZK1CuLtKombJkFA2T1jl8LAIIs7IV6gBQ==}
-
-  '@types/jquery@4.0.0':
-    resolution: {integrity: sha512-Z+to+A2VkaHq1DfI2oSwsoCdhCHMpTSgjWzNcbNlRGYzksDBpPUgEcAL+RQjOBJRaLoEAOHXxqDGBVP+BblBwg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1914,8 +2010,6 @@ snapshots:
     dependencies:
       '@types/sizzle': 2.3.10
 
-  '@types/jquery@4.0.0': {}
-
   '@types/json-schema@7.0.15': {}
 
   '@types/luxon@3.7.1': {}
@@ -1938,7 +2032,7 @@ snapshots:
 
   '@types/tooltipster@0.0.35':
     dependencies:
-      '@types/jquery': 4.0.0
+      '@types/jquery': 3.5.34
 
   '@types/trusted-types@2.0.7': {}
 
