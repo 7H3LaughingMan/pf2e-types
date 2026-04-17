@@ -52,7 +52,7 @@
         ]
     },
     "dependencies": {
-        "@7h3laughingman/foundry-types": "~14.360.4",
+        "@7h3laughingman/foundry-types": "~14.360.8",
         "@codemirror/lang-html": "^6.4.11",
         "@codemirror/lang-javascript": "^6.2.5",
         "@codemirror/lang-json": "^6.0.2",
