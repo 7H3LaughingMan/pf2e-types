@@ -1,23 +1,13 @@
 import { PlaceablesLayerPointerEvent } from "#client/canvas/layers/base/placeables-layer.mjs";
 import { Point } from "#common/_types.mjs";
+import { GridSnappingMode } from "#common/constants.mjs";
+import { EffectAreaShape } from "#item/types.js";
 import { RegionDocumentPF2e } from "#scene/region-document/document.js";
 /** Add support for drag/drop repositioning of regions. */
 declare class RegionPF2e<TDocument extends RegionDocumentPF2e = RegionDocumentPF2e> extends fc.placeables.Region<TDocument> {
-    static RENDER_FLAGS: {
-        refreshPosition: {};
-        redraw: {
-            propagate: ["refresh"];
-        };
-        refresh: {
-            propagate: ["refreshState", "refreshBorder"];
-            alias: boolean;
-        };
-        refreshState: object;
-        refreshBorder: object;
-    };
+    get snappingMode(): GridSnappingMode;
+    get areaShape(): EffectAreaShape | null;
     getSnappedPosition(position?: Point): Point;
-    protected _canDrag(user: User, event: PIXI.FederatedPointerEvent): boolean;
-    protected _onDragLeftMove(event: PlaceablesLayerPointerEvent<this>): void;
     /** Save the coordinates of the new drop location(s). */
     protected _onDragLeftDrop(event: PlaceablesLayerPointerEvent<this>): Promise<TDocument[]>;
 }

@@ -1,4 +1,5 @@
 import { CreaturePF2e } from "#actor";
+import { ActorUpdateCallbackOptions, ActorUpdateOperation } from "#actor/base.js";
 import { Abilities } from "#actor/creature/data.js";
 import { CreatureUpdateCallbackOptions } from "#actor/creature/index.js";
 import { ActorInitiative } from "#actor/initiative.js";
@@ -13,6 +14,8 @@ import { VariantCloneParams } from "./types.js";
 declare class NPCPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | null> extends CreaturePF2e<TParent> {
     #private;
     initiative: ActorInitiative;
+    /** If this is a troop, contains the actors of the other troop segments in the current scene */
+    otherSegments: NPCPF2e[] | null;
     get allowedItemTypes(): (ItemType | "physical")[];
     /** The level of this creature without elite/weak adjustments */
     get baseLevel(): number;
@@ -49,11 +52,25 @@ declare class NPCPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF
         },
     ): Promise<this>;
     variantClone(params: VariantCloneParams): this | Promise<this>;
-    protected _preUpdate(changed: DeepPartial<this["_source"]>, options: CreatureUpdateCallbackOptions, user: fd.BaseUser): Promise<boolean | void>;
+    protected _preUpdate(
+        changed: DeepPartial<this["_source"]>,
+        options: CreatureUpdateCallbackOptions & {
+            fromTroop?: boolean;
+        },
+        user: fd.BaseUser,
+    ): Promise<boolean | void>;
+    _onUpdate(changed: DeepPartial<this["_source"]>, options: ActorUpdateCallbackOptions, userId: string): void;
+    protected _onEmbeddedDocumentChange(): void;
 }
 interface NPCPF2e<TParent extends TokenDocumentPF2e | null = TokenDocumentPF2e | null> extends CreaturePF2e<TParent> {
     flags: NPCFlags;
     readonly _source: NPCSource;
     system: NPCSystemData;
+    update(
+        data: Record<string, unknown>,
+        operation?: Partial<ActorUpdateOperation<TParent>> & {
+            fromTroop?: boolean;
+        },
+    ): Promise<this | undefined>;
 }
 export { NPCPF2e };

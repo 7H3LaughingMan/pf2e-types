@@ -9,14 +9,12 @@ import { ItemType } from "#item/types.js";
 import { Rarity } from "#module/data.js";
 import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/sheet/mixin.svelte.js";
 import { default as MiniSearch } from "minisearch";
-
 interface FormulaPickerConfiguration extends fa.ApplicationConfiguration {
     actor: CharacterPF2e;
     ability: CraftingAbility;
     item?: FeatPF2e | AbilityItemPF2e;
     mode: "craft" | "prepare";
 }
-
 /** Creates a formula picker dialog that resolves with the selected item */
 declare class FormulaPicker extends SvelteApplicationMixin<AbstractConstructorOf<ApplicationV2> & { DEFAULT_OPTIONS: DeepPartial<FormulaPickerConfiguration> }>(
     fa.api.ApplicationV2,
@@ -47,7 +45,6 @@ declare class FormulaPicker extends SvelteApplicationMixin<AbstractConstructorOf
     resolveSelection(): Promise<PhysicalItemPF2e | null>;
     protected _prepareContext(): Promise<FormulaPickerContext>;
 }
-
 interface FormulaPickerContext extends SvelteApplicationRenderContext {
     actor: ActorPF2e;
     ability: CraftingAbility;
@@ -62,7 +59,6 @@ interface FormulaPickerContext extends SvelteApplicationRenderContext {
         sections: FormulaSection[];
     };
 }
-
 interface FormulaSection {
     level: number;
     formulas: {
@@ -72,7 +68,6 @@ interface FormulaSection {
         selected: boolean;
     }[];
 }
-
 interface FormulaViewData {
     id: string;
     uuid: ItemUUID;
@@ -83,6 +78,5 @@ interface FormulaViewData {
     level: number | null;
     rarity: Rarity | null;
 }
-
 export { FormulaPicker };
 export type { FormulaPickerContext };

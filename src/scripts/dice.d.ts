@@ -1,6 +1,6 @@
 import { ActorPF2e } from "#actor";
 import { ApplicationV1Options } from "#client/appv1/api/_module.mjs";
-import { RollMode } from "#common/constants.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { ItemPF2e } from "#item";
 /**
  * @category Other
@@ -39,7 +39,7 @@ declare class DicePF2e {
         flavor,
         onClose,
         dialogOptions,
-        rollMode,
+        messageMode,
         rollType,
     }: {
         event: PointerEvent | JQuery.TriggeredEvent;
@@ -53,7 +53,7 @@ declare class DicePF2e {
         flavor?: (parts: (string | number | string[])[], data: Record<string, unknown>) => string;
         onClose?: (html: HTMLElement | JQuery, parts: (string | number)[], data: Record<string, unknown>) => void;
         dialogOptions?: Partial<ApplicationV1Options>;
-        rollMode?: RollMode;
+        messageMode?: ChatMessageMode;
         rollType?: string;
     }): Promise<unknown>;
     alter(add: number, multiply: number): this;

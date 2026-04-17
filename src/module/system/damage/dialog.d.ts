@@ -1,4 +1,4 @@
-import { RollMode } from "#common/constants.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { DegreeOfSuccessIndex } from "#system/degree-of-success.js";
 import { DamageCategoryUnique, DamageDamageContext, DamageFormulaData, DamageType } from "./types.js";
 /**
@@ -24,7 +24,7 @@ declare class DamageModifierDialog extends fav1.api.Application {
     /** Show the damage roll dialog and wait for it to close */
     resolve(): Promise<boolean>;
     close(options?: { force?: boolean }): Promise<void>;
-    /** Overriden to add some additional first-render behavior */
+    /** Focus the submit button to allow for submission via spacebar press. */
     protected _injectHTML($html: JQuery<HTMLElement>): void;
 }
 interface DamageDialogParams {
@@ -59,8 +59,13 @@ interface DamageDialogData {
     isCritical: boolean;
     damageTypes: typeof CONFIG.PF2E.damageTypes;
     damageSubtypes: Pick<ConfigPF2e["PF2E"]["damageCategories"], DamageCategoryUnique>;
-    rollModes: Record<RollMode, string>;
-    rollMode: RollMode | "roll" | undefined;
+    messageModes: Record<
+        ChatMessageMode,
+        {
+            label: string;
+        }
+    >;
+    messageMode: ChatMessageMode;
     showDamageDialogs: boolean;
     formula: string;
 }

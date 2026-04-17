@@ -1,6 +1,6 @@
-import { LaxSchemaField } from "#system/schema-data-fields.js";
+import { DataModelSchemaField } from "#common/data/fields.mjs";
 import { RuleElement } from "./rule-element/base.js";
-import { RuleElementOptions, RuleElementSchema, RuleElementSource } from "./rule-element/index.js";
+import { RuleElementOptions, RuleElementSource } from "./rule-element/index.js";
 export type { RuleElementSynthetics } from "./synthetics.ts";
 export { RuleElement, RuleElementOptions, RuleElements, RuleElementSource };
 /**
@@ -13,6 +13,6 @@ declare class RuleElements {
     static fromOwnedItem(options: RuleElementOptions): RuleElement[];
 }
 type RuleElementConstructor = {
-    schema: LaxSchemaField<RuleElementSchema>;
+    schema: DataModelSchemaField;
     LOCALIZATION_PREFIXES: string[];
 } & (new (data: RuleElementSource, options: RuleElementOptions) => RuleElement);

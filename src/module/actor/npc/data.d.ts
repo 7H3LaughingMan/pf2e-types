@@ -215,6 +215,12 @@ interface NPCSaves {
 }
 interface NPCHitPoints extends HitPointsStatistic {
     base?: number;
+    thresholds:
+        | {
+              hp: number;
+              segments: number;
+          }[]
+        | null;
 }
 /** System Data for skill special modifiers (such as +9 to climb) */
 interface NPCSpecialSkill extends NPCSpecialSkillSource {

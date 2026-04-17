@@ -1,7 +1,15 @@
 import { DataSchema } from "#common/abstract/_types.mjs";
 import { default as DataModel } from "#common/abstract/data.mjs";
-import { ArrayFieldOptions, DataFieldOptions, DataFieldValidationOptions, ObjectFieldOptions, StringFieldOptions } from "#common/data/_types.mjs";
-import { CleanFieldOptions, MaybeSchemaProp, ModelPropFromDataField, SourceFromDataField, SourceFromSchema } from "#common/data/fields.mjs";
+import {
+    ArrayFieldOptions,
+    DataFieldOptions,
+    DataFieldValidationOptions,
+    DataModelCleaningOptions,
+    DataModelUpdateState,
+    ObjectFieldOptions,
+    StringFieldOptions,
+} from "#common/data/_types.mjs";
+import { MaybeSchemaProp, ModelPropFromDataField, SourceFromDataField, SourceFromSchema } from "#common/data/fields.mjs";
 import { Predicate, PredicateStatement, RawPredicate } from "#system/predication.js";
 import { SlugCamel } from "#util";
 import fields = foundry.data.fields;
@@ -21,14 +29,10 @@ declare class PrunedSchemaField<
         options?: Record<string, unknown>,
     ): MaybeSchemaProp<TModelProp, TRequired, TNullable, THasInitial>;
 }
-/** A `SchemaField` that preserves fields not declared in its `DataSchema` */
-declare class LaxSchemaField<TDataSchema extends DataSchema> extends fields.SchemaField<TDataSchema> {
-    protected _cleanType(data: Record<string, unknown>, options?: CleanFieldOptions): SourceFromSchema<TDataSchema>;
-}
 /** A `SchemaField` that does not cast the source value to an object */
 declare class StrictSchemaField<TDataSchema extends DataSchema> extends fields.SchemaField<TDataSchema> {
     protected _cast(value: unknown): SourceFromSchema<TDataSchema>;
-    protected _cleanType(data: object, options?: CleanFieldOptions): SourceFromSchema<TDataSchema>;
+    protected _cleanType(data: object, options: DataModelCleaningOptions, _state: DataModelUpdateState): SourceFromSchema<TDataSchema>;
 }
 /** A `StringField` that does not cast the source value */
 declare class StrictStringField<
@@ -79,7 +83,7 @@ declare class StrictArrayField<
     /** Don't wrap a non-array in an array */
     protected _cast(value: unknown): unknown;
     /** Parent method assumes array-wrapping: pass through unchanged */
-    protected _cleanType(value: unknown): unknown;
+    protected _cleanType(value: unknown, options: DataModelCleaningOptions, _state: DataModelUpdateState): unknown;
     initialize(
         value: MaybeSchemaProp<TSourceProp, TRequired, TNullable, THasInitial>,
         model: DataModel,
@@ -161,7 +165,7 @@ declare class DataUnionField<
      * Perform some cleaning while first checking that an upstream `_cast` won't convert a dog into a cat (or a number
      * into an array).
      */
-    clean(value: unknown, options?: CleanFieldOptions | undefined): MaybeUnionSchemaProp<TField, TRequired, TNullable, THasInitial>;
+    clean(value: unknown, options?: DataModelCleaningOptions, _state?: DataModelUpdateState): MaybeUnionSchemaProp<TField, TRequired, TNullable, THasInitial>;
     protected _validateType(value: unknown, options?: DataFieldValidationOptions | undefined): boolean | void | validation.DataModelValidationFailure;
     initialize(value: unknown, model?: DataModel, options?: object | undefined): MaybeUnionSchemaProp<TField, TRequired, TNullable, THasInitial>;
 }
@@ -181,7 +185,11 @@ declare class SlugField<TRequired extends boolean = true, TNullable extends bool
 > {
     constructor(options?: SlugFieldOptions<TRequired, TNullable, THasInitial>);
     protected static get _defaults(): SlugFieldOptions<boolean, boolean, boolean>;
-    protected _cleanType(value: Maybe<string>, options?: CleanFieldOptions): MaybeSchemaProp<string, TRequired, TNullable, THasInitial>;
+    protected _cleanType(
+        value: Maybe<string>,
+        options: DataModelCleaningOptions,
+        _state: DataModelUpdateState,
+    ): MaybeSchemaProp<string, TRequired, TNullable, THasInitial>;
 }
 interface SlugField<TRequired extends boolean = true, TNullable extends boolean = boolean, THasInitial extends boolean = boolean> extends StrictStringField<
     string,
@@ -270,11 +278,11 @@ declare class RecordField<
         valueField: TValueField,
         options?: ObjectFieldOptions<RecordFieldSourceProp<TKeyField, TValueField, TDense>, TRequired, TNullable, THasInitial>,
     );
-    protected _isValidKeyFieldType(
+    protected isValidKeyFieldType(
         keyField: unknown,
     ): keyField is fields.StringField<string, string, true, false, false> | fields.NumberField<number, number, true, false, false>;
-    protected _validateValues(values: Record<string, unknown>, options?: DataFieldValidationOptions): validation.DataModelValidationFailure | void;
-    protected _cleanType(values: Record<string, unknown>, options?: CleanFieldOptions | undefined): Record<string, unknown>;
+    protected validateValues(values: Record<string, unknown>, options?: DataFieldValidationOptions): validation.DataModelValidationFailure | void;
+    protected _cleanType(values: Record<string, unknown>, options: DataModelCleaningOptions, _state: DataModelUpdateState): Record<string, unknown>;
     protected _validateType(values: unknown, options?: DataFieldValidationOptions): boolean | validation.DataModelValidationFailure | void;
     initialize(
         values: object | null | undefined,
@@ -291,7 +299,6 @@ export {
     AnyChoiceField,
     DataUnionField,
     LaxArrayField,
-    LaxSchemaField,
     NullableBooleanField,
     NullField,
     PredicateField,

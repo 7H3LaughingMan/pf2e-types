@@ -1,8 +1,9 @@
 import { ActorPF2e } from "#actor/base.js";
+import { ToCompendiumOptions } from "#client/_types.mjs";
 import { DialogV2Configuration } from "#client/applications/api/dialog.mjs";
 import { DocumentHTMLEmbedConfig } from "#client/applications/ux/text-editor.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { ItemUUID } from "#client/documents/_module.mjs";
-import { ToCompendiumOptions } from "#client/documents/abstract/_module.mjs";
 import { DropCanvasData } from "#client/helpers/hooks.mjs";
 import {
     DatabaseCreateCallbackOptions,
@@ -12,7 +13,7 @@ import {
     DatabaseUpdateCallbackOptions,
     Document,
 } from "#common/abstract/_module.mjs";
-import { ImageFilePath, RollMode } from "#common/constants.mjs";
+import { ImageFilePath } from "#common/constants.mjs";
 import { PhysicalItemPF2e } from "#item";
 import { ItemOriginFlag } from "#module/chat-message/data.js";
 import { ChatMessagePF2e } from "#module/chat-message/document.js";
@@ -74,7 +75,7 @@ declare class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> exte
     toMessage(
         event?: Maybe<Event>,
         options?: {
-            rollMode?: RollMode | "roll";
+            mode?: ChatMessageMode;
             create?: boolean;
             data?: Record<string, unknown>;
         },
@@ -154,6 +155,7 @@ declare class ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> exte
 interface ItemPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends Item<TParent> {
     constructor: typeof ItemPF2e;
     flags: ItemFlagsPF2e;
+    img: ImageFilePath;
     readonly _source: ItemSourcePF2e;
     system: ItemSystemData;
     get sheet(): ItemSheetPF2e<this>;

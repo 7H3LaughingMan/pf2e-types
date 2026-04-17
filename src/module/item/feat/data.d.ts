@@ -88,7 +88,7 @@ type FeatSystemSchema = Omit<ItemSystemSchema, "traits"> & {
         proficiencies: RecordField<
             fields.StringField<IncreasableProficiency, IncreasableProficiency, true, false, false>,
             fields.SchemaField<{
-                rank: fields.NumberField<OneToFour, OneToFour, true, false, false>;
+                rank: fields.NumberField<OneToFour, OneToFour, true, false, true>;
                 attribute: fields.StringField<AttributeString, AttributeString, true, true, true>;
             }>
         >;

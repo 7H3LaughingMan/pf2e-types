@@ -1,6 +1,6 @@
 import { ActorPF2e } from "#actor";
-import { MeasuredTemplatePF2e } from "#module/canvas/measured-template.js";
 import { ChatMessagePF2e } from "#module/chat-message/document.js";
+import { RegionDocumentPF2e } from "#scene";
 import { ItemSourcePF2e } from "./base/data/index.js";
 import { ItemTraits, ItemTraitsNoRarity } from "./base/data/system.js";
 import { ItemPF2e } from "./base/document.js";
@@ -53,7 +53,7 @@ declare function addOrUpgradeTrait<TTrait extends ItemTrait>(
  */
 declare function removeTrait<TTrait extends ItemTrait>(traits: Pick<ItemTraits<TTrait>, "value" | "config">, trait: string): void;
 declare function createEffectAreaLabel(areaData: { type: EffectAreaShape; value: number }): string;
-declare function placeItemTemplate(
+declare function placeRegionFromItem(
     area: {
         type: EffectAreaShape;
         value: number;
@@ -65,5 +65,5 @@ declare function placeItemTemplate(
         message?: ChatMessagePF2e;
         item: ItemPF2e;
     },
-): Promise<MeasuredTemplatePF2e>;
-export { addOrUpgradeTrait, createEffectAreaLabel, itemIsOfType, markdownToHTML, performLatePreparation, placeItemTemplate, reduceItemName, removeTrait };
+): Promise<RegionDocumentPF2e | null>;
+export { addOrUpgradeTrait, createEffectAreaLabel, itemIsOfType, markdownToHTML, performLatePreparation, placeRegionFromItem, reduceItemName, removeTrait };

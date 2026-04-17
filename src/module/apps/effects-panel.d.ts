@@ -1,7 +1,6 @@
 import { ActorPF2e } from "#actor";
 import { HandlebarsRenderOptions } from "#client/applications/api/handlebars-application.mjs";
 import { AbstractEffectPF2e } from "#item";
-
 export declare class EffectsPanel extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
     /**
@@ -9,7 +8,7 @@ export declare class EffectsPanel extends fa.api.HandlebarsApplicationMixin(fa.a
      * to properly wait for promises to resolve before refreshing the UI.
      */
     refresh: (
-        options?:
+        ...args: (
             | boolean
             | {
                   force?: boolean | undefined;
@@ -32,7 +31,8 @@ export declare class EffectsPanel extends fa.api.HandlebarsApplicationMixin(fa.a
                       | undefined;
                   isFirstRender?: boolean | undefined;
               }
-            | undefined,
+            | undefined
+        )[]
     ) => void;
     static DEFAULT_OPTIONS: DeepPartial<fa.ApplicationConfiguration>;
     static PARTS: Record<string, fa.api.HandlebarsTemplatePart>;
@@ -41,7 +41,6 @@ export declare class EffectsPanel extends fa.api.HandlebarsApplicationMixin(fa.a
     /** Move the panel to the right interface column. */
     _onRender(context: object, options: HandlebarsRenderOptions): Promise<void>;
 }
-
 interface EffectsPanelViewData extends fa.ApplicationRenderContext {
     afflictions: EffectViewData[];
     conditions: EffectViewData[];
@@ -51,11 +50,9 @@ interface EffectsPanelViewData extends fa.ApplicationRenderContext {
         isGM: boolean;
     };
 }
-
 interface EffectViewData {
     effect: AbstractEffectPF2e;
     description: string;
     remaining: string | null;
 }
-
 export {};

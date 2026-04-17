@@ -41,7 +41,7 @@ declare class Kingdom extends foundry.abstract.DataModel<PartySystemData, Kingdo
      */
     update(data: DeepPartial<KingdomSource> & Record<string, unknown>): Promise<void>;
     /** Resets kingdom data preparation and re-renders all party actor sheets, which includes the kingmaker sheet */
-    notifyUpdate: () => void;
+    notifyUpdate: (...args: never[]) => void;
     prepareBaseData(): void;
     prepareDerivedData(): void;
     getRollOptions(): string[];

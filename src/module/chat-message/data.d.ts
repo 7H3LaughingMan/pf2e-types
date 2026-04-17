@@ -1,7 +1,7 @@
 import { RawDamageDice, RawModifier } from "#actor/modifiers.js";
+import { ChatMessageMode } from "#client/config.mjs";
 import { ActorUUID, TokenDocumentUUID } from "#client/documents/_module.mjs";
-import { DocumentUUID } from "#client/utils/_module.mjs";
-import { RollMode } from "#common/constants.mjs";
+import type { DocumentUUID } from "#client/utils/_module.mjs";
 import { ChatMessageFlags } from "#common/documents/chat-message.mjs";
 import { SpellSource } from "#item/base/data/index.js";
 import { MagicTradition } from "#item/spell/types.js";
@@ -110,7 +110,7 @@ interface SpellCastContextFlag {
     options: string[];
     outcome?: DegreeOfSuccessString;
     /** The roll mode (i.e., 'roll', 'blindroll', etc) to use when rendering this roll. */
-    rollMode?: RollMode;
+    messageMode?: ChatMessageMode;
 }
 interface AreaAttackContextFlag {
     type: "area-fire" | "auto-fire";

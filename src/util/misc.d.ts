@@ -120,7 +120,7 @@ declare function sortObjByKey(value: unknown): unknown;
 /** Walk an object tree and replace any string values found according to a provided function */
 declare function recursiveReplaceString<T>(source: T, replace: (s: string) => string | number): T;
 /** Create a localization function with a prefixed localization object path */
-declare function localizer(prefix: string): (...args: Parameters<Localization["format"]>) => string;
+declare function localizer(prefix: string): (...args: Parameters<Localization["localize"]>) => string;
 /** Walk a localization object and recursively map the keys as localization strings starting with a given prefix */
 declare function configFromLocalization<T extends Record<string, TranslationDictionaryValue>>(localization: T, prefix: string): T;
 /** Does the parameter look like an image file path? */

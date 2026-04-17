@@ -16,6 +16,8 @@ interface CheckboxData {
     isExpanded: boolean;
     label: string;
     options: CheckboxOptions;
+    /** Defaults to the object key of this filter */
+    optionPrefix?: string;
     selected: string[];
 }
 interface TraitData<T extends string = string> {
@@ -33,6 +35,8 @@ interface TraitData<T extends string = string> {
 interface SelectData {
     label: string;
     options: Record<string, string>;
+    /** Defaults to the object key of this filter */
+    optionPrefix?: string;
     selected: string;
 }
 interface OrderData {
@@ -60,6 +64,8 @@ interface RangesInputData {
         inputMax: string;
     };
     label: string;
+    /** Defaults to the object key of this filter */
+    optionPrefix?: string;
 }
 interface LevelData {
     changed: boolean;
@@ -74,7 +80,7 @@ interface BaseFilterData {
     search: {
         text: string;
     };
-    traits: TraitData<string>;
+    traits: TraitData;
 }
 interface ActionFilters extends BaseFilterData {
     checkboxes: {

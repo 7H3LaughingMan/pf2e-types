@@ -7,9 +7,9 @@ export declare class SceneConfigPF2e<TDocument extends ScenePF2e> extends fa.she
     /** Prepare context data for the system tab. */
     protected _preparePartContext(
         partId: string,
-        context: fa.api.DocumentSheetRenderContext,
+        context: fa.api.DocumentSheetRenderContext<TDocument>,
         options: fa.api.HandlebarsRenderOptions,
-    ): Promise<fa.api.DocumentSheetRenderContext>;
+    ): Promise<fa.api.DocumentSheetRenderContext<TDocument>>;
     protected _onRender(context: Record<string, unknown>, options: fa.api.HandlebarsRenderOptions): Promise<void>;
     protected _prepareSubmitData(
         event: SubmitEvent,

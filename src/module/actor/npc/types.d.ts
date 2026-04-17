@@ -1,11 +1,10 @@
 import { CreatureSheetData } from "#actor/creature/sheet.js";
-import { HitPointsStatistic } from "#actor/data/base.js";
 import { AbilityViewData } from "#actor/sheet/data-types.js";
 import { MovementType, SaveType, SkillSlug } from "#actor/types.js";
 import { ImageFilePath, VideoFilePath } from "#common/constants.mjs";
 import { ItemPF2e } from "#item";
 import { SpellcastingSheetData } from "#item/spellcasting-entry/index.js";
-import { ZeroToFour } from "#module/data.js";
+import { ValueAndMax, ZeroToFour } from "#module/data.js";
 import { NPCAttackTraitOrTag, TagifyEntry } from "#module/sheet/helpers.js";
 import { ArmorClassTraceData } from "#system/statistic/index.js";
 import { NPCAttributes, NPCPerceptionData, NPCSaveData, NPCSkillData, NPCSystemData } from "./data.js";
@@ -43,7 +42,6 @@ interface NPCSystemSheetData extends NPCSystemData {
     perception: NPCPerceptionData & WithAdjustments & WithRank;
     attributes: NPCAttributes & {
         ac: ArmorClassTraceData & WithAdjustments;
-        hp: HitPointsStatistic & WithAdjustments;
     };
     details: NPCSystemData["details"] & {
         level: NPCSystemData["details"]["level"] & WithAdjustments;
@@ -86,6 +84,16 @@ interface NPCSpellcastingSheetData extends SpellcastingSheetData {
 }
 /** Additional fields added in sheet data preparation */
 interface NPCSheetData extends CreatureSheetData<NPCPF2e> {
+    hp: ValueAndMax & {
+        details: string;
+        thresholds:
+            | {
+                  hp: number;
+                  segments: number;
+                  selected: boolean;
+              }[]
+            | null;
+    } & WithAdjustments;
     attacks: NPCStrikeSheetData[];
     actions: NPCActionSheetData;
     data: NPCSystemSheetData;

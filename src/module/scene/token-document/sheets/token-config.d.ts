@@ -1,7 +1,6 @@
 import { default as FormDataExtended } from "#client/applications/ux/form-data-extended.mjs";
 import { DatabaseCreateOperation, DatabaseUpdateOperation } from "#common/abstract/_types.mjs";
-import { TokenConfigMixinPF2e } from "./mixin.js";
-
+import { TokenConfigMixinPF2e } from "./mixin.ts";
 declare class TokenConfigPF2e extends TokenConfigMixinPF2e(fa.sheets.TokenConfig) {
     get linkToActorSize(): boolean;
     get autoscale(): boolean;
@@ -13,5 +12,4 @@ declare class TokenConfigPF2e extends TokenConfigMixinPF2e(fa.sheets.TokenConfig
         options?: Partial<DatabaseCreateOperation<Scene | null>> | Partial<DatabaseUpdateOperation<Scene | null>>,
     ): Promise<void>;
 }
-
 export { TokenConfigPF2e };

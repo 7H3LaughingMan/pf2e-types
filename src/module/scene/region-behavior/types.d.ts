@@ -1,9 +1,9 @@
-import { RegionEvent } from "#client/documents/_types.mjs";
+import { RegionEvent } from "#client/documents/region.mjs";
 import { UserPF2e } from "#module/user/document.js";
 import { EnvironmentBehaviorType, EnvironmentFeatureBehaviorType, RegionBehaviorPF2e, RegionDocumentPF2e } from "#scene";
 import { DIFFICULT_TERRAIN_GRADES } from "./values.js";
 import coreBehaviors = foundry.data.regionBehaviors;
-type RegionEventPF2e = RegionEvent<object, RegionDocumentPF2e, UserPF2e>;
+type RegionEventPF2e = RegionEvent<RegionDocumentPF2e, UserPF2e>;
 interface AdjustDarknessLevelRegionBehavior<TParent extends RegionDocumentPF2e | null = RegionDocumentPF2e | null> extends RegionBehaviorPF2e<TParent> {
     type: "adjustDarknessLevel";
     system: coreBehaviors.AdjustDarknessLevelRegionBehaviorType;

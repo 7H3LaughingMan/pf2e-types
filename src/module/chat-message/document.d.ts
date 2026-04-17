@@ -1,12 +1,12 @@
 import { ActorPF2e } from "#actor";
 import { AttackAction, StrikeData } from "#actor/data/base.js";
+import { ChatMessageCreateCallbackOptions, ChatMessageCreateOperation } from "#client/documents/chat-message.mjs";
 import { DataModelConstructionContext } from "#common/abstract/_module.mjs";
-import { ChatMessageCreateCallbackOptions, ChatMessageCreateOperation } from "#common/documents/chat-message.mjs";
 import { ItemPF2e } from "#item";
 import { UserPF2e } from "#module/user/index.js";
 import { ScenePF2e, TokenDocumentPF2e } from "#scene/index.js";
 import { ChatMessageFlagsPF2e, ChatMessageSourcePF2e } from "./data.js";
-declare class ChatMessagePF2e extends ChatMessage {
+declare class ChatMessagePF2e extends ChatMessage<UserPF2e | null> {
     #private;
     /** Set some flags/flag scopes early. */
     protected _initializeSource(data: object, options?: DataModelConstructionContext<null>): this["_source"];
@@ -45,8 +45,7 @@ declare class ChatMessagePF2e extends ChatMessage {
         userId: string,
     ): void;
 }
-interface ChatMessagePF2e extends ChatMessage {
-    author: UserPF2e | null;
+interface ChatMessagePF2e extends ChatMessage<UserPF2e | null> {
     flags: ChatMessageFlagsPF2e;
     readonly _source: ChatMessageSourcePF2e;
     get speakerActor(): ActorPF2e | null;

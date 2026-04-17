@@ -92,6 +92,8 @@ declare class TokenPF2e<TDocument extends TokenDocumentPF2e = TokenDocumentPF2e>
             ignoreFlankable?: boolean;
         },
     ): boolean;
+    /** Adds turn markers to all troop segments as well */
+    protected _refreshTurnMarker(): void;
     /**
      * Determine whether two potential flankers are on opposite sides of flankee
      * @param flankerA  First of two potential flankers

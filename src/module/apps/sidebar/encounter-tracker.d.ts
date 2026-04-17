@@ -1,5 +1,6 @@
 import { ApplicationRenderContext } from "#client/applications/_types.mjs";
 import { HandlebarsRenderOptions } from "#client/applications/api/handlebars-application.mjs";
+import { TurnContext } from "#client/applications/sidebar/tabs/combat-tracker.mjs";
 import { CombatantPF2e, EncounterPF2e } from "#module/encounter/index.js";
 import { TokenDocumentPF2e } from "#scene/index.js";
 import tabs = fa.sidebar.tabs;
@@ -13,6 +14,7 @@ export declare class EncounterTracker<TEncounter extends EncounterPF2e | null> e
     };
     protected _configureRenderOptions(options: Partial<HandlebarsRenderOptions>): void;
     protected _preparePartContext(partId: string, context: ApplicationRenderContext, options: HandlebarsRenderOptions): Promise<ApplicationRenderContext>;
+    protected _prepareTurnContext(combat: NonNullable<TEncounter>, combatant: CombatantPF2e, index: number): Promise<TurnContext>;
     protected _renderHTML(context: object, options: HandlebarsRenderOptions): Promise<Record<string, HTMLElement>>;
     /** Show encounter analysis data if obtainable */
     protected _onRender(context: ApplicationRenderContext, options: HandlebarsRenderOptions): Promise<void>;
@@ -24,4 +26,6 @@ export declare class EncounterTracker<TEncounter extends EncounterPF2e | null> e
     protected _onCombatantControl(event: PointerEvent, target: HTMLElement): Promise<void>;
     /** Replace parent method with system-specific procedure */
     protected _onToggleDefeatedStatus(combatant: CombatantPF2e<TEncounter>): Promise<void>;
+    /** Ping all tokens involved with the combatant for troops */
+    protected _onPingCombatant(combatant: CombatantPF2e): Promise<boolean | void>;
 }

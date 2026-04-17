@@ -2,8 +2,8 @@ import { ActorPF2e, CreaturePF2e } from "#actor";
 import { TraitViewData } from "#actor/data/base.js";
 import { Modifier } from "#actor/modifiers.js";
 import { AttributeString } from "#actor/types.js";
+import { ChatMessageMode } from "#client/config.mjs";
 import { Rolled } from "#client/dice/_module.mjs";
-import { RollMode } from "#common/constants.mjs";
 import { ItemPF2e } from "#item";
 import { ZeroToFour } from "#module/data.js";
 import { RollNotePF2e, RollNoteSource } from "#module/notes.js";
@@ -112,8 +112,8 @@ interface StatisticRollParameters {
     modifiers?: Modifier[];
     /** The originating item of this attack, if any */
     item?: ItemPF2e<ActorPF2e> | null;
-    /** The roll mode (i.e., 'roll', 'blindroll', etc) to use when rendering this roll. */
-    rollMode?: RollMode | "roll";
+    /** The ChatMessage visibility mode to use when rendering this roll. */
+    messageMode?: ChatMessageMode;
     /** Should the dialog be skipped */
     skipDialog?: boolean;
     /** Should this roll be rolled twice? If so, should it keep highest or lowest? */

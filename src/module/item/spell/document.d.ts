@@ -1,9 +1,9 @@
 import { ActorPF2e } from "#actor";
 import { AttributeString } from "#actor/types.js";
+import { ChatMessageMode } from "#client/config.mjs";
 import { Rolled } from "#client/dice/roll.mjs";
 import { DocumentConstructionContext } from "#common/_types.mjs";
 import { DatabaseCreateCallbackOptions, DatabaseUpdateCallbackOptions, DatabaseUpdateOperation } from "#common/abstract/_types.mjs";
-import { RollMode } from "#common/constants.mjs";
 import { ItemUUID } from "#common/documents/_module.mjs";
 import { ConsumablePF2e, ItemPF2e } from "#item";
 import { ItemSourcePF2e, RawItemChatData } from "#item/base/data/index.js";
@@ -11,10 +11,9 @@ import { ItemDescriptionData } from "#item/base/data/system.js";
 import { SpellSlotGroupId } from "#item/spellcasting-entry/collection.js";
 import { BaseSpellcastingEntry } from "#item/spellcasting-entry/types.js";
 import { RangeData } from "#item/types.js";
-import { MeasuredTemplatePF2e } from "#module/canvas/index.js";
 import { ChatMessagePF2e, ItemOriginFlag } from "#module/chat-message/index.js";
 import { OneToTen, Rarity, ZeroToTwo } from "#module/data.js";
-import { TokenDocumentPF2e } from "#scene";
+import { RegionDocumentPF2e, TokenDocumentPF2e } from "#scene";
 import { CheckRoll } from "#system/check/index.js";
 import { DamageRoll } from "#system/damage/roll.js";
 import { DamageDamageContext, DamageKind, SpellDamageTemplate } from "#system/damage/types.js";
@@ -98,7 +97,7 @@ declare class SpellPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> ext
      */
     loadVariant(options?: SpellVariantOptions): this | null;
     getHeightenLayers(rank?: number): SpellHeightenLayer[];
-    placeTemplate(message?: ChatMessagePF2e): Promise<MeasuredTemplatePF2e>;
+    placeTemplate(message?: ChatMessagePF2e): Promise<RegionDocumentPF2e | null>;
     prepareBaseData(): void;
     prepareSiblingData(this: SpellPF2e<ActorPF2e>): void;
     prepareActorData(): void;
@@ -110,7 +109,7 @@ declare class SpellPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> ext
             includeVariants?: boolean;
         },
     ): string[];
-    toMessage(event?: Maybe<PointerEvent>, { create, data, rollMode }?: SpellToMessageOptions): Promise<ChatMessagePF2e | undefined>;
+    toMessage(event?: Maybe<PointerEvent>, { create, data, mode }?: SpellToMessageOptions): Promise<ChatMessagePF2e | undefined>;
     getDescriptionData(): Promise<ItemDescriptionData>;
     getChatData(
         this: SpellPF2e<ActorPF2e>,
@@ -142,13 +141,13 @@ interface SpellDamage {
 }
 interface SpellToMessageOptions {
     create?: boolean;
-    rollMode?: RollMode;
+    mode?: ChatMessageMode;
     data?: {
         castRank?: number;
     };
 }
 interface SpellDamageOptions {
-    rollMode?: RollMode | "roll";
+    messageMode?: ChatMessageMode;
     skipDialog?: boolean;
     target?: Maybe<TokenDocumentPF2e>;
 }

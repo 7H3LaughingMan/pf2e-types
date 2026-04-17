@@ -1,7 +1,8 @@
+import { SceneViewOptions } from "#client/documents/_types.mjs";
 import { SceneUpdateOptions } from "#client/documents/scene.mjs";
 import { DatabaseDeleteOperation, DatabaseUpdateOperation, Document, EmbeddedCollection } from "#common/abstract/_module.mjs";
 import { SceneFlagsPF2e } from "./data.js";
-import { AmbientLightDocumentPF2e, MeasuredTemplateDocumentPF2e, RegionDocumentPF2e, TileDocumentPF2e, TokenDocumentPF2e } from "./index.js";
+import { AmbientLightDocumentPF2e, RegionDocumentPF2e, TileDocumentPF2e, TokenDocumentPF2e } from "./index.js";
 import { SceneConfigPF2e } from "./sheet.js";
 declare class ScenePF2e extends Scene {
     #private;
@@ -29,6 +30,11 @@ declare class ScenePF2e extends Scene {
             height: number;
         },
     ): void;
+    /**
+     * Reset all troop actors on scene change in case some of them need to poach rule elements from siblings This is
+     * mostly needed for the Drained condition.
+     */
+    view(options?: SceneViewOptions): Promise<this>;
     _onUpdate(changed: DeepPartial<this["_source"]>, options: SceneUpdateOptions, userId: string): void;
     protected _onUpdateDescendantDocuments<P extends Document>(
         parent: P,
@@ -53,7 +59,6 @@ interface ScenePF2e extends Scene {
     checkAuras(): void;
     readonly lights: EmbeddedCollection<AmbientLightDocumentPF2e<this>>;
     readonly regions: EmbeddedCollection<RegionDocumentPF2e<this>>;
-    readonly templates: EmbeddedCollection<MeasuredTemplateDocumentPF2e<this>>;
     readonly tiles: EmbeddedCollection<TileDocumentPF2e<this>>;
     readonly tokens: EmbeddedCollection<TokenDocumentPF2e<this>>;
     get sheet(): SceneConfigPF2e<this>;

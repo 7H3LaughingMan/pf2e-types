@@ -16,15 +16,18 @@ declare const ancestryTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -35,10 +38,15 @@ declare const ancestryTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -49,7 +57,9 @@ declare const ancestryTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -60,18 +70,26 @@ declare const ancestryTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
     reflection: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -87,14 +105,19 @@ declare const ancestryTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -163,7 +186,6 @@ declare const creatureTraits: {
     experiment: string;
     fey: string;
     fiend: string;
-    formian: string;
     fungus: string;
     genie: string;
     ghoran: string;
@@ -232,7 +254,6 @@ declare const creatureTraits: {
     rakshasa: string;
     reflection: string;
     robot: string;
-    ryphorian: string;
     sahkil: string;
     "sea-devil": string;
     sedacthy: string;
@@ -303,13 +324,16 @@ declare const creatureTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     catfolk: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -320,10 +344,15 @@ declare const creatureTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     gnoll: string;
     gnome: string;
     goblin: string;
@@ -333,6 +362,8 @@ declare const creatureTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -343,15 +374,23 @@ declare const creatureTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -366,12 +405,17 @@ declare const creatureTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -559,6 +603,7 @@ declare const weaponTraits: {
     "boost-1d4": string;
     "boost-1d6": string;
     "boost-1d8": string;
+    "boost-2d10": string;
     brace: string;
     breakdown: string;
     brutal: string;
@@ -745,15 +790,18 @@ declare const weaponTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -764,10 +812,15 @@ declare const weaponTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -778,7 +831,9 @@ declare const weaponTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -789,18 +844,26 @@ declare const weaponTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
     reflection: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -816,14 +879,19 @@ declare const weaponTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -835,6 +903,12 @@ declare const npcAttackTraits: {
     area: string;
     concentrate: string;
     curse: string;
+    "deadly-2d4": string;
+    "deadly-3d4": string;
+    "deadly-4d4": string;
+    "deadly-2d6": string;
+    "deadly-3d6": string;
+    "deadly-4d6": string;
     "deadly-2d8": string;
     "deadly-3d8": string;
     "deadly-4d8": string;
@@ -920,6 +994,7 @@ declare const npcAttackTraits: {
     "boost-1d4": string;
     "boost-1d6": string;
     "boost-1d8": string;
+    "boost-2d10": string;
     brace: string;
     breakdown: string;
     brutal: string;
@@ -1105,15 +1180,18 @@ declare const npcAttackTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -1124,10 +1202,15 @@ declare const npcAttackTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -1138,7 +1221,9 @@ declare const npcAttackTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -1149,18 +1234,26 @@ declare const npcAttackTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
     reflection: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -1176,14 +1269,19 @@ declare const npcAttackTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -1232,6 +1330,7 @@ declare const featTraits: {
     impulse: string;
     infusion: string;
     injury: string;
+    lfan: string;
     lineage: string;
     manifestation: string;
     manipulate: string;
@@ -1386,15 +1485,18 @@ declare const featTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -1405,10 +1507,15 @@ declare const featTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -1419,7 +1526,9 @@ declare const featTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -1430,17 +1539,25 @@ declare const featTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -1456,14 +1573,19 @@ declare const featTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -1840,6 +1962,7 @@ declare const actionTraits: {
     ikon: string;
     impulse: string;
     infusion: string;
+    lfan: string;
     lineage: string;
     manifestation: string;
     mindshift: string;
@@ -1877,15 +2000,18 @@ declare const actionTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -1896,10 +2022,15 @@ declare const actionTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -1910,7 +2041,9 @@ declare const actionTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -1920,17 +2053,25 @@ declare const actionTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -1946,14 +2087,19 @@ declare const actionTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -2164,6 +2310,7 @@ declare const effectTraits: Omit<
         ikon: string;
         impulse: string;
         infusion: string;
+        lfan: string;
         lineage: string;
         manifestation: string;
         mindshift: string;
@@ -2201,15 +2348,18 @@ declare const effectTraits: Omit<
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -2220,10 +2370,15 @@ declare const effectTraits: Omit<
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -2234,7 +2389,9 @@ declare const effectTraits: Omit<
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -2244,17 +2401,25 @@ declare const effectTraits: Omit<
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -2270,14 +2435,19 @@ declare const effectTraits: Omit<
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     },
@@ -2344,15 +2514,18 @@ declare const effectTraits: Omit<
     | "automaton"
     | "awakened-animal"
     | "azarketi"
+    | "bantrid"
     | "barathu"
     | "beastkin"
     | "borai"
+    | "brenneri"
     | "bugbear"
     | "catfolk"
     | "centaur"
     | "changeling"
     | "conrasu"
     | "contemplative"
+    | "copaxi"
     | "corpsefolk"
     | "dhampir"
     | "dragonblood"
@@ -2363,10 +2536,15 @@ declare const effectTraits: Omit<
     | "dwarf"
     | "elebrian"
     | "elf"
+    | "entu-colony"
     | "fetchling"
     | "fleshwarp"
+    | "fonqugon"
+    | "formian"
     | "ganzi"
+    | "gap-touched"
     | "geniekin"
+    | "gfolian"
     | "ghoran"
     | "gnoll"
     | "gnome"
@@ -2377,7 +2555,9 @@ declare const effectTraits: Omit<
     | "hobgoblin"
     | "human"
     | "hungerseed"
+    | "ijtikri"
     | "ikeshti"
+    | "izalguun"
     | "jotunborn"
     | "kalo"
     | "kasatha"
@@ -2388,18 +2568,26 @@ declare const effectTraits: Omit<
     | "lashunta"
     | "leshy"
     | "lizardfolk"
+    | "madrosarai"
+    | "maraquoi"
     | "merfolk"
     | "minotaur"
+    | "moyishuu"
     | "naari"
     | "nagaji"
     | "nephilim"
+    | "novian"
     | "orc"
     | "oread"
+    | "orocoran"
+    | "osharu"
     | "pahtra"
     | "poppet"
     | "prismeni"
     | "ratfolk"
+    | "raxilite"
     | "reflection"
+    | "ryphorian"
     | "samsaran"
     | "sarangay"
     | "sarcesian"
@@ -2415,14 +2603,19 @@ declare const effectTraits: Omit<
     | "surki"
     | "sylph"
     | "talos"
+    | "talphi"
     | "tanuki"
     | "tengu"
+    | "trox"
     | "undine"
+    | "urog"
     | "vanara"
     | "vesk"
     | "vishkanya"
     | "vlaka"
     | "wayang"
+    | "worlanisi"
+    | "xenometric-android"
     | "yaksha"
     | "yaoguai"
     | "additive"
@@ -2492,6 +2685,7 @@ declare const hazardTraits: {
     consumable: string;
     curse: string;
     environmental: string;
+    fear: string;
     haunt: string;
     inhaled: string;
     kaiju: string;
@@ -2575,7 +2769,6 @@ declare const hazardTraits: {
     experiment: string;
     fey: string;
     fiend: string;
-    formian: string;
     fungus: string;
     genie: string;
     ghoran: string;
@@ -2639,7 +2832,6 @@ declare const hazardTraits: {
     rakshasa: string;
     reflection: string;
     robot: string;
-    ryphorian: string;
     sahkil: string;
     "sea-devil": string;
     sedacthy: string;
@@ -2690,13 +2882,16 @@ declare const hazardTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     catfolk: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -2707,10 +2902,15 @@ declare const hazardTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     gnoll: string;
     gnome: string;
     goblin: string;
@@ -2720,6 +2920,8 @@ declare const hazardTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -2730,15 +2932,23 @@ declare const hazardTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -2753,12 +2963,17 @@ declare const hazardTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -2889,15 +3104,18 @@ declare const equipmentTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -2908,10 +3126,15 @@ declare const equipmentTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -2922,7 +3145,9 @@ declare const equipmentTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -2933,18 +3158,26 @@ declare const equipmentTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
     reflection: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -2960,14 +3193,19 @@ declare const equipmentTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
@@ -3032,6 +3270,7 @@ declare const armorTraits: {
     analog: string;
     apex: string;
     aquadynamic: string;
+    archaic: string;
     artifact: string;
     auditory: string;
     aura: string;
@@ -3043,6 +3282,7 @@ declare const armorTraits: {
     cursed: string;
     "entrench-melee": string;
     "entrench-ranged": string;
+    exposed: string;
     extradimensional: string;
     flexible: string;
     focused: string;
@@ -3307,6 +3547,7 @@ declare const kingmakerTraits: {
     ikon: string;
     impulse: string;
     infusion: string;
+    lfan: string;
     lineage: string;
     manifestation: string;
     mindshift: string;
@@ -3344,15 +3585,18 @@ declare const kingmakerTraits: {
     automaton: string;
     "awakened-animal": string;
     azarketi: string;
+    bantrid: string;
     barathu: string;
     beastkin: string;
     borai: string;
+    brenneri: string;
     bugbear: string;
     catfolk: string;
     centaur: string;
     changeling: string;
     conrasu: string;
     contemplative: string;
+    copaxi: string;
     corpsefolk: string;
     dhampir: string;
     dragonblood: string;
@@ -3363,10 +3607,15 @@ declare const kingmakerTraits: {
     dwarf: string;
     elebrian: string;
     elf: string;
+    "entu-colony": string;
     fetchling: string;
     fleshwarp: string;
+    fonqugon: string;
+    formian: string;
     ganzi: string;
+    "gap-touched": string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     gnoll: string;
     gnome: string;
@@ -3377,7 +3626,9 @@ declare const kingmakerTraits: {
     hobgoblin: string;
     human: string;
     hungerseed: string;
+    ijtikri: string;
     ikeshti: string;
+    izalguun: string;
     jotunborn: string;
     kalo: string;
     kasatha: string;
@@ -3387,17 +3638,25 @@ declare const kingmakerTraits: {
     lashunta: string;
     leshy: string;
     lizardfolk: string;
+    madrosarai: string;
+    maraquoi: string;
     merfolk: string;
     minotaur: string;
+    moyishuu: string;
     naari: string;
     nagaji: string;
     nephilim: string;
+    novian: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     pahtra: string;
     poppet: string;
     prismeni: string;
     ratfolk: string;
+    raxilite: string;
+    ryphorian: string;
     samsaran: string;
     sarangay: string;
     sarcesian: string;
@@ -3413,38 +3672,23 @@ declare const kingmakerTraits: {
     surki: string;
     sylph: string;
     talos: string;
+    talphi: string;
     tanuki: string;
     tengu: string;
+    trox: string;
     undine: string;
+    urog: string;
     vanara: string;
     vesk: string;
     vishkanya: string;
     vlaka: string;
     wayang: string;
+    worlanisi: string;
+    "xenometric-android": string;
     yaksha: string;
     yaoguai: string;
 };
 declare const traitDescriptions: {
-    abysium: string;
-    adamantine: string;
-    "cold-iron": string;
-    duskwood: string;
-    djezet: string;
-    dragonhide: string;
-    dreamweb: string;
-    "grisantian-pelt": string;
-    inubrix: string;
-    dawnsilver: string;
-    noqual: string;
-    orichalcum: string;
-    siccatite: string;
-    silver: string;
-    sisterstone: string;
-    "sisterstone-dusk": string;
-    "sisterstone-scarlet": string;
-    sloughstone: string;
-    "sovereign-steel": string;
-    warpglass: string;
     aasimar: string;
     aberration: string;
     abjuration: string;
@@ -3512,6 +3756,7 @@ declare const traitDescriptions: {
     azata: string;
     backstabber: string;
     backswing: string;
+    bantrid: string;
     barbarian: string;
     bard: string;
     beast: string;
@@ -3526,10 +3771,12 @@ declare const traitDescriptions: {
     "boost-1d8": string;
     "boost-1d10": string;
     "boost-1d12": string;
+    "boost-2d10": string;
     "bottled-breath": string;
     brace: string;
     bravado: string;
     breakdown: string;
+    brenneri: string;
     brutal: string;
     bugbear: string;
     bulwark: string;
@@ -3578,6 +3825,8 @@ declare const traitDescriptions: {
     contact: string;
     contingency: string;
     contract: string;
+    copaxi: string;
+    cosmic: string;
     "critical-brawling": string;
     "critical-corrosive": string;
     "critical-cryo": string;
@@ -3649,6 +3898,7 @@ declare const traitDescriptions: {
     emotion: string;
     "entrench-melee": string;
     "entrench-ranged": string;
+    "entu-colony": string;
     environmental: string;
     esoterica: string;
     ethereal: string;
@@ -3679,17 +3929,21 @@ declare const traitDescriptions: {
     focus: string;
     focused: string;
     foldaway: string;
+    fonqugon: string;
     force: string;
     forceful: string;
+    formian: string;
     fortune: string;
     "free-hand": string;
     fulu: string;
     fungus: string;
     gadget: string;
     ganzi: string;
+    "gap-touched": string;
     general: string;
     genie: string;
     geniekin: string;
+    gfolian: string;
     ghoran: string;
     ghost: string;
     ghoul: string;
@@ -3714,7 +3968,7 @@ declare const traitDescriptions: {
     harnessed: string;
     haunt: string;
     healing: string;
-    "hefty-14": string;
+    "hefty-2": string;
     herald: string;
     hex: string;
     hindering: string;
@@ -3723,6 +3977,7 @@ declare const traitDescriptions: {
     hryngar: string;
     human: string;
     humanoid: string;
+    ijtikri: string;
     ikon: string;
     illusion: string;
     impulse: string;
@@ -3746,6 +4001,7 @@ declare const traitDescriptions: {
     inventor: string;
     invested: string;
     investigator: string;
+    izalguun: string;
     "jousting-d4": string;
     "jousting-d6": string;
     "jousting-d8": string;
@@ -3762,17 +4018,20 @@ declare const traitDescriptions: {
     laminar: string;
     "launching-dart": string;
     leshy: string;
+    lfan: string;
     light: string;
     linguistic: string;
     litany: string;
     lizardfolk: string;
     lozenge: string;
+    madrosarai: string;
     maftet: string;
     magical: string;
     magitech: string;
     magus: string;
     manifestation: string;
     manipulate: string;
+    maraquoi: string;
     mechanical: string;
     mental: string;
     merfolk: string;
@@ -3793,6 +4052,7 @@ declare const traitDescriptions: {
     mortic: string;
     mounted: string;
     move: string;
+    moyishuu: string;
     multiclass: string;
     mummy: string;
     munavri: string;
@@ -3806,6 +4066,7 @@ declare const traitDescriptions: {
     nindoru: string;
     noisy: string;
     nonlethal: string;
+    novian: string;
     nymph: string;
     oath: string;
     occult: string;
@@ -3816,6 +4077,8 @@ declare const traitDescriptions: {
     oracle: string;
     orc: string;
     oread: string;
+    orocoran: string;
+    osharu: string;
     overflow: string;
     paaridar: string;
     palinthanos: string;
@@ -3861,6 +4124,7 @@ declare const traitDescriptions: {
     ranger: string;
     rare: string;
     ratfolk: string;
+    raxilite: string;
     razing: string;
     reach: string;
     "reach-0": string;
@@ -3882,14 +4146,18 @@ declare const traitDescriptions: {
     relic: string;
     "reload-0": string;
     "reload-1": string;
-    "reload-1-min": string;
     "reload-2": string;
+    "reload-1-min": string;
     reload: string;
     repeating: string;
+    "resilient-1": string;
+    "resilient-2": string;
+    "resilient-3": string;
     resonant: string;
     retractable: string;
     revelation: string;
     rogue: string;
+    ryphorian: string;
     saggorak: string;
     sahkil: string;
     samsaran: string;
@@ -3951,6 +4219,7 @@ declare const traitDescriptions: {
     sylph: string;
     talisman: string;
     talos: string;
+    talphi: string;
     tandem: string;
     tane: string;
     tanggal: string;
@@ -3989,6 +4258,7 @@ declare const traitDescriptions: {
     trip: string;
     troll: string;
     troop: string;
+    trox: string;
     "true-name": string;
     twin: string;
     "two-hand-d6": string;
@@ -4005,6 +4275,7 @@ declare const traitDescriptions: {
     unwieldy: string;
     upgrade: string;
     urdefhan: string;
+    urog: string;
     vampire: string;
     vanara: string;
     vehicular: string;
@@ -4042,11 +4313,33 @@ declare const traitDescriptions: {
     witch: string;
     wizard: string;
     wood: string;
+    worlanisi: string;
     wraith: string;
     wyrwood: string;
+    "xenometric-android": string;
     xulgath: string;
     zombie: string;
     zone: string;
+    abysium: string;
+    adamantine: string;
+    "cold-iron": string;
+    duskwood: string;
+    djezet: string;
+    dragonhide: string;
+    dreamweb: string;
+    "grisantian-pelt": string;
+    inubrix: string;
+    dawnsilver: string;
+    noqual: string;
+    orichalcum: string;
+    siccatite: string;
+    silver: string;
+    sisterstone: string;
+    "sisterstone-dusk": string;
+    "sisterstone-scarlet": string;
+    sloughstone: string;
+    "sovereign-steel": string;
+    warpglass: string;
     cavalry: string;
     infantry: string;
     siege: string;

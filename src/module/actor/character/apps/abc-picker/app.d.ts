@@ -4,14 +4,11 @@ import { ItemUUID } from "#common/documents/_module.mjs";
 import { ItemType } from "#item/types.js";
 import { Rarity } from "#module/data.js";
 import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/sheet/mixin.svelte.js";
-
 type AhBCDType = Extract<ItemType, "ancestry" | "heritage" | "background" | "class" | "deity">;
-
 interface ABCPickerConfiguration extends fa.ApplicationConfiguration {
     actor: CharacterPF2e;
     itemType: AhBCDType;
 }
-
 interface ABCItemRef {
     name: string;
     originalName?: string;
@@ -28,7 +25,6 @@ interface ABCItemRef {
     };
     hidden: boolean;
 }
-
 interface ABCPickerContext extends SvelteApplicationRenderContext {
     actor: CharacterPF2e;
     foundryApp: ABCPicker;
@@ -38,7 +34,6 @@ interface ABCPickerContext extends SvelteApplicationRenderContext {
         items: ABCItemRef[];
     };
 }
-
 /** A `Compendium`-like application for presenting A(H)BCD options for a character */
 declare class ABCPicker extends SvelteApplicationMixin<AbstractConstructorOf<fa.api.ApplicationV2> & { DEFAULT_OPTIONS: DeepPartial<ABCPickerConfiguration> }>(
     fa.api.ApplicationV2,
@@ -51,5 +46,4 @@ declare class ABCPicker extends SvelteApplicationMixin<AbstractConstructorOf<fa.
     protected _initializeApplicationOptions(options: Partial<ABCPickerConfiguration>): ABCPickerConfiguration;
     protected _prepareContext(): Promise<ABCPickerContext>;
 }
-
 export { ABCPicker, type ABCPickerContext };

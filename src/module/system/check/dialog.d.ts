@@ -1,6 +1,6 @@
 import { RawModifier, StatisticModifier } from "#actor/modifiers.js";
 import { ApplicationV1Options } from "#client/appv1/api/application-v1.mjs";
-import { RollMode } from "#common/constants.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { RollSubstitution } from "#module/rules/synthetics.js";
 import { CheckCheckContext } from "./types.js";
 /**
@@ -22,15 +22,15 @@ export declare class CheckModifiersDialog extends fav1.api.Application {
     getData(): Promise<CheckDialogData>;
     activateListeners($html: JQuery): void;
     close(options?: { force?: boolean }): Promise<void>;
-    /** Overriden to add some additional first-render behavior */
+    /** Focus the submit button to allow for submission via spacebar press. */
     protected _injectHTML($html: JQuery<HTMLElement>): void;
 }
 interface CheckDialogData {
     appId: string;
     modifiers: RawModifier[];
     totalModifier: number;
-    rollModes: Record<RollMode, string>;
-    rollMode: RollMode | "roll" | undefined;
+    messageModes: Record<ChatMessageMode, string>;
+    messageMode: ChatMessageMode;
     showCheckDialogs: boolean;
     substitutions: RollSubstitutionDialogData[];
     fortune: boolean;

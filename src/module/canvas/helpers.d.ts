@@ -1,4 +1,7 @@
+import { ActorPF2e } from "#actor";
 import { Point } from "#common/_types.mjs";
+import { SpecificShapeSource } from "#common/data/_module.mjs";
+import { EffectAreaShape } from "#item/types.js";
 import { TokenPF2e } from "./index.js";
 /**
  * Measure the minimum distance between two rectangles
@@ -27,4 +30,11 @@ declare function measureDistanceCuboid(
 declare function measureDistance(p0: Point, p1: Point): number;
 /** Get a grid square at an arbitrary point. */
 declare function squareAtPoint(point: Point): PIXI.Rectangle;
-export { measureDistance, measureDistanceCuboid, squareAtPoint };
+declare function shapeDataFromEffectArea(
+    area: {
+        type: EffectAreaShape;
+        value: number;
+    },
+    actor: Maybe<ActorPF2e>,
+): DeepPartial<SpecificShapeSource> | null;
+export { measureDistance, measureDistanceCuboid, shapeDataFromEffectArea, squareAtPoint };

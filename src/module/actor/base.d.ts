@@ -1,7 +1,7 @@
 import { ActorAlliance, ActorDimensions, ActorInstances, ApplyDamageParams, AuraData, SaveType } from "#actor/types.js";
+import { ToCompendiumOptions } from "#client/_types.mjs";
 import { DialogV2Configuration } from "#client/applications/api/dialog.mjs";
 import { ActorUUID } from "#client/documents/_module.mjs";
-import { ToCompendiumOptions } from "#client/documents/abstract/_module.mjs";
 import { DocumentConstructionContext } from "#common/_types.mjs";
 import { DatabaseCreateOperation, DatabaseDeleteCallbackOptions, DatabaseUpdateOperation, Document } from "#common/abstract/_module.mjs";
 import { ImageFilePath, VideoFilePath } from "#common/constants.mjs";
@@ -113,7 +113,7 @@ declare class ActorPF2e<TParent extends TokenDocumentPF2e | null = TokenDocument
     get alliance(): ActorAlliance;
     get combatant(): CombatantPF2e<EncounterPF2e> | null;
     /** Add effect icons from effect items and rule elements */
-    get temporaryEffects(): fd.ActiveEffect<Actor | Item>[];
+    get appliedEffects(): fd.ActiveEffect<Actor | Item>[];
     /** A means of checking this actor's type without risk of circular import references */
     isOfType<T extends "creature" | ActorType>(...types: T[]): this is ActorInstances<TParent>[T];
     /** Whether this actor is an ally of the provided actor */

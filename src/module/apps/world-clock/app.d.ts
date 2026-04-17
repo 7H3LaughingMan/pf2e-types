@@ -1,7 +1,6 @@
 import { HandlebarsRenderOptions, HandlebarsTemplatePart } from "#client/applications/api/handlebars-application.mjs";
 import { DateTime } from "luxon";
 import { animateDarkness } from "./animate-darkness.js";
-
 interface WorldClockRenderContext extends fa.ApplicationRenderContext {
     date: string;
     time: string;
@@ -9,7 +8,6 @@ interface WorldClockRenderContext extends fa.ApplicationRenderContext {
     user: User;
     sign: "+" | "-";
 }
-
 export declare class WorldClock extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
     constructor();
@@ -42,5 +40,4 @@ export declare class WorldClock extends fa.api.HandlebarsApplicationMixin(fa.api
     /** Create a message informing the user that scene darkness is synced to world time */
     static createSyncedMessage(): HTMLSpanElement;
 }
-
 export {};

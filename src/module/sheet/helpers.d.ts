@@ -1,7 +1,8 @@
 import { ActorPF2e } from "#actor";
 import { default as Application } from "#client/appv1/api/application-v1.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { TooltipDirection } from "#client/helpers/interaction/tooltip-manager.mjs";
-import { ImageFilePath, RollMode } from "#common/constants.mjs";
+import { ImageFilePath } from "#common/constants.mjs";
 import { ItemUUID } from "#common/documents/_module.mjs";
 import { ItemPF2e, MeleePF2e, PhysicalItemPF2e } from "#item";
 import { ActionCost, TraitChatData } from "#item/base/data/index.js";
@@ -68,7 +69,7 @@ declare function getItemFromDragEvent(event: DragEvent): Promise<ItemPF2e | null
 /** Returns statistic dialog roll parameters based on held keys */
 type ParamsFromEvent = {
     skipDialog: boolean;
-    rollMode?: RollMode | "roll";
+    messageMode?: ChatMessageMode;
 };
 /** Set roll mode and dialog skipping from a user's input */
 declare function eventToRollParams(
@@ -78,7 +79,7 @@ declare function eventToRollParams(
     },
 ): ParamsFromEvent;
 /** Set roll mode from a user's input: used for messages that are not actually rolls. */
-declare function eventToRollMode(event: Maybe<Event>): RollMode | "roll";
+declare function eventToMessageMode(event: Maybe<Event>): ChatMessageMode | undefined;
 /** Returns true if the control key is held down, handling mac */
 declare function isControlDown(event: PointerEvent | KeyboardEvent | TouchEvent | WheelEvent): boolean;
 /** Given a uuid, loads the item and sends it to chat, potentially recontextualizing it with a given actor */
@@ -164,7 +165,7 @@ export {
     createSheetTags,
     createTagifyTraits,
     createTooltipListener,
-    eventToRollMode,
+    eventToMessageMode,
     eventToRollParams,
     getActionIcon,
     getAdjustedValue,

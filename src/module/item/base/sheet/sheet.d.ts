@@ -1,5 +1,5 @@
 import { FormSelectOption } from "#client/applications/forms/fields.mjs";
-import { ProseMirrorEditor } from "#client/applications/ux/_module.mjs";
+import { EditorCreateOptions } from "#client/applications/ux/prosemirror-editor.mjs";
 import { ApplicationV1HeaderButton, AppV1RenderOptions } from "#client/appv1/api/application-v1.mjs";
 import { DataField } from "#common/data/fields.mjs";
 import { ItemPF2e } from "#item";
@@ -8,6 +8,7 @@ import { RuleElementSource } from "#module/rules/index.js";
 import { SheetOptions, TagifyEntry } from "#module/sheet/helpers.js";
 import { DamageType } from "#system/damage/types.js";
 import { Plugin } from "prosemirror-state";
+import { EditorView } from "prosemirror-view";
 declare class ItemSheetPF2e<TItem extends ItemPF2e> extends fav1.sheets.ItemSheet<TItem, ItemSheetOptions> {
     #private;
     constructor(item: TItem, options?: Partial<fav1.sheets.ItemSheetData<TItem>>);
@@ -21,13 +22,7 @@ declare class ItemSheetPF2e<TItem extends ItemPF2e> extends fav1.sheets.ItemShee
     protected onTagSelector(anchor: HTMLAnchorElement): void;
     /** Get NPC attack effect options */
     protected getAttackEffectOptions(): Record<string, string>;
-    activateEditor(
-        name: string,
-        options?: {
-            engine?: "prosemirror" | "tinymce";
-        },
-        initialContent?: string,
-    ): Promise<TinyMCE.Editor | ProseMirrorEditor>;
+    activateEditor(name: string, options?: EditorCreateOptions, initialContent?: string): Promise<EditorView>;
     close(options?: { force?: boolean }): Promise<void>;
     protected _configureProseMirrorPlugins(
         name: string,
@@ -53,6 +48,7 @@ interface ItemSheetDataPF2e<TItem extends ItemPF2e> extends fav1.sheets.ItemShee
     sidebarTemplate: string | null;
     detailsTemplate: string;
     item: TItem;
+    source: TItem["_source"];
     data: TItem["system"];
     systemFields: Record<string, DataField>;
     /** The leading part of IDs used for label-input/select matching */

@@ -1,5 +1,4 @@
 import { ActorPF2e } from "#actor";
-
 /** Allows the distribution and split of coins to multiple players */
 export declare class DistributeCoinsDialog extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
@@ -15,13 +14,11 @@ export declare class DistributeCoinsDialog extends fa.api.HandlebarsApplicationM
     options: DistributeCoinsConfiguration;
     _prepareContext(options: fa.ApplicationRenderOptions): Promise<DistributeCoinsContext>;
 }
-
 interface DistributeCoinsConfiguration extends fa.api.DialogV2Configuration {
     actor: ActorPF2e;
     /** An optional initial list of recipients to receive coins */
     recipients?: ActorPF2e[];
 }
-
 interface DistributeCoinsContext extends fa.ApplicationRenderContext {
     rootId: string;
     canBreakCoins: boolean;
@@ -31,5 +28,4 @@ interface DistributeCoinsContext extends fa.ApplicationRenderContext {
         checked: boolean;
     }[];
 }
-
 export {};

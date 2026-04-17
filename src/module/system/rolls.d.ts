@@ -1,6 +1,6 @@
 import { Modifier } from "#actor/modifiers.js";
 import { RollOrigin, RollTarget } from "#actor/roll-context/types.js";
-import { RollMode } from "#common/constants.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { AbilityTrait } from "#item/ability/types.js";
 import { TokenPF2e } from "#module/canvas/index.js";
 import { CheckContextChatFlag } from "#module/chat-message/index.js";
@@ -52,7 +52,7 @@ interface BaseRollContext {
     /** Any notes which should be shown for the roll. */
     notes?: (RollNotePF2e | RollNoteSource)[];
     /** The roll mode (i.e., 'roll', 'blindroll', etc) to use when rendering this roll. */
-    rollMode?: RollMode | "roll";
+    messageMode?: ChatMessageMode;
     /** Origin data for the check, if applicable */
     origin?: RollOrigin | null;
     /** Targeting data for the check, if applicable */

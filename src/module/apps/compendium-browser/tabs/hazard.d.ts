@@ -1,7 +1,7 @@
 import { CompendiumBrowser } from "../browser.js";
 import { ContentTabName } from "../data.js";
 import { CompendiumBrowserTab } from "./base.svelte.js";
-import { CompendiumBrowserIndexData, HazardFilters } from "./data.js";
+import { HazardFilters } from "./data.js";
 export declare class CompendiumBrowserHazardTab extends CompendiumBrowserTab {
     tabName: ContentTabName;
     tabLabel: string;
@@ -12,6 +12,5 @@ export declare class CompendiumBrowserHazardTab extends CompendiumBrowserTab {
     constructor(browser: CompendiumBrowser);
     get isGMOnly(): boolean;
     protected loadData(): Promise<void>;
-    protected filterIndexData(entry: CompendiumBrowserIndexData): boolean;
     protected prepareFilterData(): HazardFilters;
 }

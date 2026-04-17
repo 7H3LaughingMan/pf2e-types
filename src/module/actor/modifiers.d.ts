@@ -15,7 +15,7 @@ declare const PROFICIENCY_RANK_OPTION: readonly [
     "proficiency:legendary",
 ];
 declare function ensureProficiencyOption(options: Set<string>, rank: number): void;
-declare const MODIFIER_TYPES: Set<"item" | "untyped" | "status" | "ability" | "proficiency" | "circumstance" | "potency">;
+declare const MODIFIER_TYPES: Set<"item" | "untyped" | "status" | "ability" | "proficiency" | "potency" | "circumstance">;
 type ModifierType = SetElement<typeof MODIFIER_TYPES>;
 interface RawModifier {
     /** An identifier for this modifier; should generally be a localization key (see en.json). */

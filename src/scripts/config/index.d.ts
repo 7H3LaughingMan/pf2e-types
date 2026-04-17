@@ -29,7 +29,6 @@ import {
     WeaponPF2e,
 } from "#item";
 import { WeaponReloadTime } from "#item/weapon/types.js";
-import { JournalSheetPF2e } from "#module/journal-entry/sheet.js";
 export type StatusEffectIconTheme = "default" | "blackWhite";
 export declare const PF2ECONFIG: {
     defaultPartyId: string;
@@ -96,6 +95,18 @@ export declare const PF2ECONFIG: {
         18: string;
         19: string;
         20: string;
+    };
+    ranks: {
+        1: string;
+        2: string;
+        3: string;
+        4: string;
+        5: string;
+        6: string;
+        7: string;
+        8: string;
+        9: string;
+        10: string;
     };
     abilities: Record<"str" | "dex" | "con" | "int" | "wis" | "cha", string>;
     dcAdjustments: {
@@ -552,6 +563,7 @@ export declare const PF2ECONFIG: {
         "compact-shield": string;
         "dart-shield": string;
         "deflecting-field": string;
+        "fiendsbane-shield": string;
         "fortress-shield": string;
         "gauntlet-buckler": string;
         "harnessed-shield": string;
@@ -973,6 +985,7 @@ export declare const PF2ECONFIG: {
         "affixed-to-a-ranged-weapon": string;
         "affixed-to-a-shield": string;
         "affixed-to-a-shield-or-weapon": string;
+        "affixed-to-a-slashing-weapon": string;
         "affixed-to-a-thrown-weapon": string;
         "affixed-to-a-two-handed-firearm-or-crossbow": string;
         "affixed-to-an-innovation": string;
@@ -1400,6 +1413,7 @@ export declare const PF2ECONFIG: {
         ikon: string;
         impulse: string;
         infusion: string;
+        lfan: string;
         lineage: string;
         manifestation: string;
         mindshift: string;
@@ -1437,15 +1451,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -1456,10 +1473,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -1470,7 +1492,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -1480,17 +1504,25 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -1506,14 +1538,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -1528,15 +1565,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -1547,10 +1587,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -1561,7 +1606,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -1572,18 +1619,26 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
         reflection: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -1599,14 +1654,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -1616,6 +1676,7 @@ export declare const PF2ECONFIG: {
         analog: string;
         apex: string;
         aquadynamic: string;
+        archaic: string;
         artifact: string;
         auditory: string;
         aura: string;
@@ -1627,6 +1688,7 @@ export declare const PF2ECONFIG: {
         cursed: string;
         "entrench-melee": string;
         "entrench-ranged": string;
+        exposed: string;
         extradimensional: string;
         flexible: string;
         focused: string;
@@ -1920,7 +1982,6 @@ export declare const PF2ECONFIG: {
         experiment: string;
         fey: string;
         fiend: string;
-        formian: string;
         fungus: string;
         genie: string;
         ghoran: string;
@@ -1989,7 +2050,6 @@ export declare const PF2ECONFIG: {
         rakshasa: string;
         reflection: string;
         robot: string;
-        ryphorian: string;
         sahkil: string;
         "sea-devil": string;
         sedacthy: string;
@@ -2060,13 +2120,16 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         catfolk: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -2077,10 +2140,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         gnoll: string;
         gnome: string;
         goblin: string;
@@ -2090,6 +2158,8 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -2100,15 +2170,23 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -2123,12 +2201,17 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -2339,6 +2422,7 @@ export declare const PF2ECONFIG: {
             ikon: string;
             impulse: string;
             infusion: string;
+            lfan: string;
             lineage: string;
             manifestation: string;
             mindshift: string;
@@ -2376,15 +2460,18 @@ export declare const PF2ECONFIG: {
             automaton: string;
             "awakened-animal": string;
             azarketi: string;
+            bantrid: string;
             barathu: string;
             beastkin: string;
             borai: string;
+            brenneri: string;
             bugbear: string;
             catfolk: string;
             centaur: string;
             changeling: string;
             conrasu: string;
             contemplative: string;
+            copaxi: string;
             corpsefolk: string;
             dhampir: string;
             dragonblood: string;
@@ -2395,10 +2482,15 @@ export declare const PF2ECONFIG: {
             dwarf: string;
             elebrian: string;
             elf: string;
+            "entu-colony": string;
             fetchling: string;
             fleshwarp: string;
+            fonqugon: string;
+            formian: string;
             ganzi: string;
+            "gap-touched": string;
             geniekin: string;
+            gfolian: string;
             ghoran: string;
             gnoll: string;
             gnome: string;
@@ -2409,7 +2501,9 @@ export declare const PF2ECONFIG: {
             hobgoblin: string;
             human: string;
             hungerseed: string;
+            ijtikri: string;
             ikeshti: string;
+            izalguun: string;
             jotunborn: string;
             kalo: string;
             kasatha: string;
@@ -2419,17 +2513,25 @@ export declare const PF2ECONFIG: {
             lashunta: string;
             leshy: string;
             lizardfolk: string;
+            madrosarai: string;
+            maraquoi: string;
             merfolk: string;
             minotaur: string;
+            moyishuu: string;
             naari: string;
             nagaji: string;
             nephilim: string;
+            novian: string;
             orc: string;
             oread: string;
+            orocoran: string;
+            osharu: string;
             pahtra: string;
             poppet: string;
             prismeni: string;
             ratfolk: string;
+            raxilite: string;
+            ryphorian: string;
             samsaran: string;
             sarangay: string;
             sarcesian: string;
@@ -2445,14 +2547,19 @@ export declare const PF2ECONFIG: {
             surki: string;
             sylph: string;
             talos: string;
+            talphi: string;
             tanuki: string;
             tengu: string;
+            trox: string;
             undine: string;
+            urog: string;
             vanara: string;
             vesk: string;
             vishkanya: string;
             vlaka: string;
             wayang: string;
+            worlanisi: string;
+            "xenometric-android": string;
             yaksha: string;
             yaoguai: string;
         },
@@ -2519,15 +2626,18 @@ export declare const PF2ECONFIG: {
         | "automaton"
         | "awakened-animal"
         | "azarketi"
+        | "bantrid"
         | "barathu"
         | "beastkin"
         | "borai"
+        | "brenneri"
         | "bugbear"
         | "catfolk"
         | "centaur"
         | "changeling"
         | "conrasu"
         | "contemplative"
+        | "copaxi"
         | "corpsefolk"
         | "dhampir"
         | "dragonblood"
@@ -2538,10 +2648,15 @@ export declare const PF2ECONFIG: {
         | "dwarf"
         | "elebrian"
         | "elf"
+        | "entu-colony"
         | "fetchling"
         | "fleshwarp"
+        | "fonqugon"
+        | "formian"
         | "ganzi"
+        | "gap-touched"
         | "geniekin"
+        | "gfolian"
         | "ghoran"
         | "gnoll"
         | "gnome"
@@ -2552,7 +2667,9 @@ export declare const PF2ECONFIG: {
         | "hobgoblin"
         | "human"
         | "hungerseed"
+        | "ijtikri"
         | "ikeshti"
+        | "izalguun"
         | "jotunborn"
         | "kalo"
         | "kasatha"
@@ -2563,18 +2680,26 @@ export declare const PF2ECONFIG: {
         | "lashunta"
         | "leshy"
         | "lizardfolk"
+        | "madrosarai"
+        | "maraquoi"
         | "merfolk"
         | "minotaur"
+        | "moyishuu"
         | "naari"
         | "nagaji"
         | "nephilim"
+        | "novian"
         | "orc"
         | "oread"
+        | "orocoran"
+        | "osharu"
         | "pahtra"
         | "poppet"
         | "prismeni"
         | "ratfolk"
+        | "raxilite"
         | "reflection"
+        | "ryphorian"
         | "samsaran"
         | "sarangay"
         | "sarcesian"
@@ -2590,14 +2715,19 @@ export declare const PF2ECONFIG: {
         | "surki"
         | "sylph"
         | "talos"
+        | "talphi"
         | "tanuki"
         | "tengu"
+        | "trox"
         | "undine"
+        | "urog"
         | "vanara"
         | "vesk"
         | "vishkanya"
         | "vlaka"
         | "wayang"
+        | "worlanisi"
+        | "xenometric-android"
         | "yaksha"
         | "yaoguai"
         | "additive"
@@ -2789,15 +2919,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -2808,10 +2941,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -2822,7 +2960,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -2833,18 +2973,26 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
         reflection: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -2860,14 +3008,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -2916,6 +3069,7 @@ export declare const PF2ECONFIG: {
         impulse: string;
         infusion: string;
         injury: string;
+        lfan: string;
         lineage: string;
         manifestation: string;
         manipulate: string;
@@ -3070,15 +3224,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -3089,10 +3246,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -3103,7 +3265,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -3114,17 +3278,25 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -3140,14 +3312,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -3157,6 +3334,7 @@ export declare const PF2ECONFIG: {
         consumable: string;
         curse: string;
         environmental: string;
+        fear: string;
         haunt: string;
         inhaled: string;
         kaiju: string;
@@ -3240,7 +3418,6 @@ export declare const PF2ECONFIG: {
         experiment: string;
         fey: string;
         fiend: string;
-        formian: string;
         fungus: string;
         genie: string;
         ghoran: string;
@@ -3304,7 +3481,6 @@ export declare const PF2ECONFIG: {
         rakshasa: string;
         reflection: string;
         robot: string;
-        ryphorian: string;
         sahkil: string;
         "sea-devil": string;
         sedacthy: string;
@@ -3355,13 +3531,16 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         catfolk: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -3372,10 +3551,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         gnoll: string;
         gnome: string;
         goblin: string;
@@ -3385,6 +3569,8 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -3395,15 +3581,23 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -3418,12 +3612,17 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -3646,6 +3845,7 @@ export declare const PF2ECONFIG: {
         ikon: string;
         impulse: string;
         infusion: string;
+        lfan: string;
         lineage: string;
         manifestation: string;
         mindshift: string;
@@ -3683,15 +3883,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -3702,10 +3905,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -3716,7 +3924,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -3726,17 +3936,25 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -3752,14 +3970,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -3767,6 +3990,12 @@ export declare const PF2ECONFIG: {
         area: string;
         concentrate: string;
         curse: string;
+        "deadly-2d4": string;
+        "deadly-3d4": string;
+        "deadly-4d4": string;
+        "deadly-2d6": string;
+        "deadly-3d6": string;
+        "deadly-4d6": string;
         "deadly-2d8": string;
         "deadly-3d8": string;
         "deadly-4d8": string;
@@ -3852,6 +4081,7 @@ export declare const PF2ECONFIG: {
         "boost-1d4": string;
         "boost-1d6": string;
         "boost-1d8": string;
+        "boost-2d10": string;
         brace: string;
         breakdown: string;
         brutal: string;
@@ -4037,15 +4267,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -4056,10 +4289,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -4070,7 +4308,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -4081,18 +4321,26 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
         reflection: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -4108,14 +4356,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -4339,6 +4592,7 @@ export declare const PF2ECONFIG: {
         "boost-1d4": string;
         "boost-1d6": string;
         "boost-1d8": string;
+        "boost-2d10": string;
         brace: string;
         breakdown: string;
         brutal: string;
@@ -4525,15 +4779,18 @@ export declare const PF2ECONFIG: {
         automaton: string;
         "awakened-animal": string;
         azarketi: string;
+        bantrid: string;
         barathu: string;
         beastkin: string;
         borai: string;
+        brenneri: string;
         bugbear: string;
         catfolk: string;
         centaur: string;
         changeling: string;
         conrasu: string;
         contemplative: string;
+        copaxi: string;
         corpsefolk: string;
         dhampir: string;
         dragonblood: string;
@@ -4544,10 +4801,15 @@ export declare const PF2ECONFIG: {
         dwarf: string;
         elebrian: string;
         elf: string;
+        "entu-colony": string;
         fetchling: string;
         fleshwarp: string;
+        fonqugon: string;
+        formian: string;
         ganzi: string;
+        "gap-touched": string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         gnoll: string;
         gnome: string;
@@ -4558,7 +4820,9 @@ export declare const PF2ECONFIG: {
         hobgoblin: string;
         human: string;
         hungerseed: string;
+        ijtikri: string;
         ikeshti: string;
+        izalguun: string;
         jotunborn: string;
         kalo: string;
         kasatha: string;
@@ -4569,18 +4833,26 @@ export declare const PF2ECONFIG: {
         lashunta: string;
         leshy: string;
         lizardfolk: string;
+        madrosarai: string;
+        maraquoi: string;
         merfolk: string;
         minotaur: string;
+        moyishuu: string;
         naari: string;
         nagaji: string;
         nephilim: string;
+        novian: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         pahtra: string;
         poppet: string;
         prismeni: string;
         ratfolk: string;
+        raxilite: string;
         reflection: string;
+        ryphorian: string;
         samsaran: string;
         sarangay: string;
         sarcesian: string;
@@ -4596,14 +4868,19 @@ export declare const PF2ECONFIG: {
         surki: string;
         sylph: string;
         talos: string;
+        talphi: string;
         tanuki: string;
         tengu: string;
+        trox: string;
         undine: string;
+        urog: string;
         vanara: string;
         vesk: string;
         vishkanya: string;
         vlaka: string;
         wayang: string;
+        worlanisi: string;
+        "xenometric-android": string;
         yaksha: string;
         yaoguai: string;
     };
@@ -4614,26 +4891,6 @@ export declare const PF2ECONFIG: {
         unique: string;
     };
     traitsDescriptions: {
-        abysium: string;
-        adamantine: string;
-        "cold-iron": string;
-        duskwood: string;
-        djezet: string;
-        dragonhide: string;
-        dreamweb: string;
-        "grisantian-pelt": string;
-        inubrix: string;
-        dawnsilver: string;
-        noqual: string;
-        orichalcum: string;
-        siccatite: string;
-        silver: string;
-        sisterstone: string;
-        "sisterstone-dusk": string;
-        "sisterstone-scarlet": string;
-        sloughstone: string;
-        "sovereign-steel": string;
-        warpglass: string;
         aasimar: string;
         aberration: string;
         abjuration: string;
@@ -4701,6 +4958,7 @@ export declare const PF2ECONFIG: {
         azata: string;
         backstabber: string;
         backswing: string;
+        bantrid: string;
         barbarian: string;
         bard: string;
         beast: string;
@@ -4715,10 +4973,12 @@ export declare const PF2ECONFIG: {
         "boost-1d8": string;
         "boost-1d10": string;
         "boost-1d12": string;
+        "boost-2d10": string;
         "bottled-breath": string;
         brace: string;
         bravado: string;
         breakdown: string;
+        brenneri: string;
         brutal: string;
         bugbear: string;
         bulwark: string;
@@ -4767,6 +5027,8 @@ export declare const PF2ECONFIG: {
         contact: string;
         contingency: string;
         contract: string;
+        copaxi: string;
+        cosmic: string;
         "critical-brawling": string;
         "critical-corrosive": string;
         "critical-cryo": string;
@@ -4838,6 +5100,7 @@ export declare const PF2ECONFIG: {
         emotion: string;
         "entrench-melee": string;
         "entrench-ranged": string;
+        "entu-colony": string;
         environmental: string;
         esoterica: string;
         ethereal: string;
@@ -4868,17 +5131,21 @@ export declare const PF2ECONFIG: {
         focus: string;
         focused: string;
         foldaway: string;
+        fonqugon: string;
         force: string;
         forceful: string;
+        formian: string;
         fortune: string;
         "free-hand": string;
         fulu: string;
         fungus: string;
         gadget: string;
         ganzi: string;
+        "gap-touched": string;
         general: string;
         genie: string;
         geniekin: string;
+        gfolian: string;
         ghoran: string;
         ghost: string;
         ghoul: string;
@@ -4903,7 +5170,7 @@ export declare const PF2ECONFIG: {
         harnessed: string;
         haunt: string;
         healing: string;
-        "hefty-14": string;
+        "hefty-2": string;
         herald: string;
         hex: string;
         hindering: string;
@@ -4912,6 +5179,7 @@ export declare const PF2ECONFIG: {
         hryngar: string;
         human: string;
         humanoid: string;
+        ijtikri: string;
         ikon: string;
         illusion: string;
         impulse: string;
@@ -4935,6 +5203,7 @@ export declare const PF2ECONFIG: {
         inventor: string;
         invested: string;
         investigator: string;
+        izalguun: string;
         "jousting-d4": string;
         "jousting-d6": string;
         "jousting-d8": string;
@@ -4951,17 +5220,20 @@ export declare const PF2ECONFIG: {
         laminar: string;
         "launching-dart": string;
         leshy: string;
+        lfan: string;
         light: string;
         linguistic: string;
         litany: string;
         lizardfolk: string;
         lozenge: string;
+        madrosarai: string;
         maftet: string;
         magical: string;
         magitech: string;
         magus: string;
         manifestation: string;
         manipulate: string;
+        maraquoi: string;
         mechanical: string;
         mental: string;
         merfolk: string;
@@ -4982,6 +5254,7 @@ export declare const PF2ECONFIG: {
         mortic: string;
         mounted: string;
         move: string;
+        moyishuu: string;
         multiclass: string;
         mummy: string;
         munavri: string;
@@ -4995,6 +5268,7 @@ export declare const PF2ECONFIG: {
         nindoru: string;
         noisy: string;
         nonlethal: string;
+        novian: string;
         nymph: string;
         oath: string;
         occult: string;
@@ -5005,6 +5279,8 @@ export declare const PF2ECONFIG: {
         oracle: string;
         orc: string;
         oread: string;
+        orocoran: string;
+        osharu: string;
         overflow: string;
         paaridar: string;
         palinthanos: string;
@@ -5050,6 +5326,7 @@ export declare const PF2ECONFIG: {
         ranger: string;
         rare: string;
         ratfolk: string;
+        raxilite: string;
         razing: string;
         reach: string;
         "reach-0": string;
@@ -5071,14 +5348,18 @@ export declare const PF2ECONFIG: {
         relic: string;
         "reload-0": string;
         "reload-1": string;
-        "reload-1-min": string;
         "reload-2": string;
+        "reload-1-min": string;
         reload: string;
         repeating: string;
+        "resilient-1": string;
+        "resilient-2": string;
+        "resilient-3": string;
         resonant: string;
         retractable: string;
         revelation: string;
         rogue: string;
+        ryphorian: string;
         saggorak: string;
         sahkil: string;
         samsaran: string;
@@ -5140,6 +5421,7 @@ export declare const PF2ECONFIG: {
         sylph: string;
         talisman: string;
         talos: string;
+        talphi: string;
         tandem: string;
         tane: string;
         tanggal: string;
@@ -5178,6 +5460,7 @@ export declare const PF2ECONFIG: {
         trip: string;
         troll: string;
         troop: string;
+        trox: string;
         "true-name": string;
         twin: string;
         "two-hand-d6": string;
@@ -5194,6 +5477,7 @@ export declare const PF2ECONFIG: {
         unwieldy: string;
         upgrade: string;
         urdefhan: string;
+        urog: string;
         vampire: string;
         vanara: string;
         vehicular: string;
@@ -5231,11 +5515,33 @@ export declare const PF2ECONFIG: {
         witch: string;
         wizard: string;
         wood: string;
+        worlanisi: string;
         wraith: string;
         wyrwood: string;
+        "xenometric-android": string;
         xulgath: string;
         zombie: string;
         zone: string;
+        abysium: string;
+        adamantine: string;
+        "cold-iron": string;
+        duskwood: string;
+        djezet: string;
+        dragonhide: string;
+        dreamweb: string;
+        "grisantian-pelt": string;
+        inubrix: string;
+        dawnsilver: string;
+        noqual: string;
+        orichalcum: string;
+        siccatite: string;
+        silver: string;
+        sisterstone: string;
+        "sisterstone-dusk": string;
+        "sisterstone-scarlet": string;
+        sloughstone: string;
+        "sovereign-steel": string;
+        warpglass: string;
         cavalry: string;
         infantry: string;
         siege: string;
@@ -7904,6 +8210,7 @@ export declare const PF2ECONFIG: {
         | "bloodsense"
         | "darkvision"
         | "echolocation"
+        | "electromagnetic-sense"
         | "greater-darkvision"
         | "infrared-vision"
         | "lifesense"
@@ -8267,9 +8574,6 @@ export declare const PF2ECONFIG: {
             treasure: typeof TreasurePF2e;
             weapon: typeof WeaponPF2e;
         };
-    };
-    JournalEntry: {
-        sheetClass: typeof JournalSheetPF2e;
     };
     Canvas: {
         darkness: {

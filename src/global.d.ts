@@ -6,15 +6,16 @@ import { FeatGroupData } from "#actor/character/feats/index.js";
 import { CheckModifier, Modifier, ModifierType, StatisticModifier } from "#actor/modifiers.js";
 import { SettingConfig } from "#client/_types.mjs";
 import { default as Hotbar } from "#client/applications/ui/hotbar.mjs";
-import { default as Config } from "#client/config.mjs";
+import { ChatMessageMode, default as Config } from "#client/config.mjs";
 import { default as WallDocument } from "#client/documents/wall.mjs";
 import { FoundryUI } from "#client/ui.mjs";
 import { CompendiumUUID } from "#client/utils/_module.mjs";
-import { ImageFilePath, RollMode, UserRole } from "#common/constants.mjs";
+import { ImageFilePath, UserRole } from "#common/constants.mjs";
 import { ItemPF2e, PhysicalItemPF2e } from "#item";
 import { ConditionSource } from "#item/condition/data.js";
 import { Coins } from "#item/physical/helpers.js";
 import { ActiveEffectPF2e } from "#module/active-effect.js";
+import { checkPrompt } from "#module/apps/check-prompt-generator.js";
 import { CompendiumBrowser, CompendiumBrowserSettings, CompendiumBrowserSources } from "#module/apps/compendium-browser/browser.js";
 import { EffectsPanel } from "#module/apps/effects-panel.js";
 import { ActorDirectoryPF2e, ChatLogPF2e, CompendiumDirectoryPF2e, EncounterTracker, ItemDirectoryPF2e } from "#module/apps/sidebar/index.js";
@@ -27,20 +28,11 @@ import { CombatantPF2e, EncounterPF2e } from "#module/encounter/index.js";
 import { MacroPF2e } from "#module/macro.js";
 import { RuleElement, RuleElements } from "#module/rules/index.js";
 import { UserPF2e } from "#module/user/index.js";
-import {
-    AmbientLightDocumentPF2e,
-    MeasuredTemplateDocumentPF2e,
-    RegionBehaviorPF2e,
-    RegionDocumentPF2e,
-    ScenePF2e,
-    TileDocumentPF2e,
-    TokenDocumentPF2e,
-} from "#scene";
+import { AmbientLightDocumentPF2e, RegionBehaviorPF2e, RegionDocumentPF2e, ScenePF2e, TileDocumentPF2e, TokenDocumentPF2e } from "#scene";
 import { PF2ECONFIG, StatusEffectIconTheme } from "#scripts/config/index.js";
 import { DicePF2e } from "#scripts/dice.js";
 import {
     calculateXP,
-    checkPrompt,
     editPersistent,
     launchTravelSheet,
     perceptionForSelected,
@@ -81,7 +73,7 @@ export interface ClientSettingsPF2e extends fh.ClientSettings {
     >;
     get(scope: "core", key: "fontSize"): number;
     get(scope: "core", key: "noCanvas"): boolean;
-    get(scope: "core", key: "rollMode"): RollMode;
+    get(scope: "core", key: "messageMode"): ChatMessageMode;
     get(
         scope: "core",
         key: "uiConfig",
@@ -300,7 +292,6 @@ type ConfiguredConfig = Config<
     Hotbar<MacroPF2e>,
     ItemPF2e,
     MacroPF2e,
-    MeasuredTemplateDocumentPF2e,
     RegionDocumentPF2e,
     RegionBehaviorPF2e,
     TileDocumentPF2e,
@@ -322,10 +313,6 @@ declare global {
             ruleElement: boolean;
         };
         PF2E: typeof PF2ECONFIG;
-        time: {
-            roundTime: number;
-            turnTime: number;
-        };
     }
     const CONFIG: ConfigPF2e;
     const canvas: CanvasPF2e;
@@ -361,14 +348,12 @@ declare global {
             when: (condition: boolean, then: string | number) => string | number | null;
         }
     }
-}
-
-declare module "foundry-types/client/helpers/client-settings.mjs" {
-    interface ClientSettingsMap {
-        get(key: "pf2e.worldClock"): SettingConfig & {
-            default: WorldClockSettingData;
-        };
+    namespace foundry {
+        interface ClientSettingsMap {
+            get(key: "pf2e.worldClock"): SettingConfig & {
+                default: WorldClockSettingData;
+            };
+        }
     }
 }
-
 export {};

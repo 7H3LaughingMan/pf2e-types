@@ -5,6 +5,7 @@ import {
     DatabaseCreateCallbackOptions,
     DatabaseCreateOperation,
     DatabaseDeleteCallbackOptions,
+    DatabaseDeleteOperation,
     DatabaseUpdateCallbackOptions,
 } from "#common/abstract/_types.mjs";
 import { default as EmbeddedCollection } from "#common/abstract/embedded-collection.mjs";
@@ -37,6 +38,8 @@ declare class EncounterPF2e extends Combat {
      * `async` since this is usually called from CRUD hooks, which are called prior to encounter/combatant data resets
      */
     resetActors(): Promise<void>;
+    /** Updates turn markers for tokens, including troop segments */
+    protected _updateTurnMarkers(): void;
     /** Enable the initiative button on PC sheets */
     protected _onCreate(data: this["_source"], options: DatabaseCreateCallbackOptions, userId: string): void;
     /** Call onTurnStart for each rule element on the new turn's actor */
@@ -49,6 +52,7 @@ interface EncounterPF2e extends Combat {
     readonly combatants: EmbeddedCollection<CombatantPF2e<this, TokenDocumentPF2e | null>>;
     scene: ScenePF2e;
     rollNPC(options: RollInitiativeOptionsPF2e): Promise<this>;
+    deleteEmbeddedDocuments(embeddedName: "Combatant", dataId: string[], operation?: Partial<DatabaseDeleteOperation<this>>): Promise<CombatantPF2e<this>[]>;
 }
 interface EncounterMetrics {
     threat: ThreatRating;

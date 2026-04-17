@@ -1,5 +1,4 @@
 import { ActorPF2e } from "#actor/base.js";
-
 /** Simple dialog to add currency of various denominations to an actor */
 declare class UpdateCurrencyDialog extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
@@ -16,12 +15,10 @@ declare class UpdateCurrencyDialog extends fa.api.HandlebarsApplicationMixin(fa.
     get title(): string;
     protected _prepareContext(options: fa.ApplicationRenderOptions): Promise<UpdateCurrencyContext>;
 }
-
 interface UpdateCurrencyConfiguration extends fa.api.DialogV2Configuration {
     actor: ActorPF2e;
     mode: "add" | "remove";
 }
-
 interface UpdateCurrencyContext extends fa.ApplicationRenderContext {
     id: string;
     actor: ActorPF2e;
@@ -32,5 +29,4 @@ interface UpdateCurrencyContext extends fa.ApplicationRenderContext {
     }[];
     actionLabel: string;
 }
-
 export { UpdateCurrencyDialog };

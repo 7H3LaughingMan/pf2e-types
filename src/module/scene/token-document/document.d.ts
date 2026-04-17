@@ -1,7 +1,7 @@
 import { ActorPF2e } from "#actor";
 import { PrototypeTokenPF2e } from "#actor/data/base.js";
+import { TrackedAttributesDescription } from "#client/_types.mjs";
 import { TokenResourceData } from "#client/canvas/placeables/token.mjs";
-import { TrackedAttributesDescription } from "#client/documents/_types.mjs";
 import { TokenUpdateCallbackOptions } from "#client/documents/token.mjs";
 import { Point } from "#common/_types.mjs";
 import { DatabaseCreateCallbackOptions, DatabaseDeleteCallbackOptions, DatabaseOperation } from "#common/abstract/_types.mjs";
@@ -9,6 +9,7 @@ import { default as Document } from "#common/abstract/document.mjs";
 import { GridMeasurePathResult } from "#common/grid/_types.mjs";
 import { TokenPF2e } from "#module/canvas/index.js";
 import { CombatantPF2e, EncounterPF2e } from "#module/encounter/index.js";
+import { UserPF2e } from "#module/user/document.js";
 import { DifficultTerrainGrade, RegionDocumentPF2e } from "#scene";
 import { ScenePF2e } from "../document.js";
 import { TokenAura } from "./aura/index.js";
@@ -17,10 +18,12 @@ import { TokenConfigPF2e } from "./sheets/token-config.js";
 declare class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null> extends TokenDocument<TParent> {
     #private;
     auras: Map<string, TokenAura>;
+    /** Returns the combatant representing this token or this token's troop */
+    get combatant(): CombatantPF2e<EncounterPF2e, this> | null;
     /** Returns if the token is in combat, though some actors have different conditions */
     get inCombat(): boolean;
-    /** This should be in Foundry core, but ... */
-    get scene(): TParent;
+    /** Returns the other segments of a troop that exists in the current scene, or null if this token doesn't belong to a troop */
+    get segments(): TokenDocumentPF2e[] | null;
     /** Is this token emitting light with a negative value */
     get emitsDarkness(): boolean;
     get rulesBasedVision(): boolean;
@@ -42,6 +45,8 @@ declare class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | n
     get center(): Point;
     /** The grade of difficult terrain at this token's position */
     get difficultTerrain(): DifficultTerrainGrade;
+    /** Is this token's actor present and constructed? Synthetic actors are done so lazily. */
+    get hasConstructedActor(): boolean;
     /** Check actor for effects found in `CONFIG.specialStatusEffects` */
     hasStatusEffect(statusId: string): boolean;
     /** Filter trackable attributes for relevance and avoidance of circular references */
@@ -73,6 +78,24 @@ declare class TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | n
     protected _inferMovementAction(): string;
     /** Set a token's initiative on the current encounter, creating a combatant if necessary */
     setInitiative({ initiative, sendMessage }: { initiative: number; sendMessage?: boolean }): Promise<void>;
+    static createCombatants(
+        tokens: TokenDocumentPF2e[],
+        options?: {
+            combat?: EncounterPF2e;
+        },
+    ): Promise<Combatant[]>;
+    /** Deletes combatants associated with the given tokens, accounting for troop combatants */
+    static deleteCombatants(
+        tokens: TokenDocumentPF2e[],
+        options?: {
+            combat?: EncounterPF2e;
+        },
+    ): Promise<CombatantPF2e[]>;
+    static _onDeleteOperation(
+        documents: TokenDocumentPF2e[],
+        operation: foundry.abstract.DatabaseDeleteOperation<Document | null>,
+        user: UserPF2e,
+    ): Promise<void>;
     /**
      * Use actor updates (real or otherwise) that propagate down to ephemeral token changes  to provoke canvas object
      * re-rendering.
@@ -103,7 +126,7 @@ interface TokenDocumentPF2e<TParent extends ScenePF2e | null = ScenePF2e | null>
     flags: TokenFlagsPF2e;
     regions: Set<RegionDocumentPF2e<NonNullable<TParent>>>;
     get actor(): ActorPF2e<this | null> | null;
-    get combatant(): CombatantPF2e<EncounterPF2e, this> | null;
+    get baseActor(): ActorPF2e<null> | null;
     get object(): TokenPF2e<this> | null;
     get sheet(): TokenConfigPF2e;
 }

@@ -1,6 +1,6 @@
 import { ActorPF2e } from "#actor";
 import { AttributeString } from "#actor/types.js";
-import { RollMode } from "#common/constants.mjs";
+import { ChatMessageMode } from "#client/config.mjs";
 import { PhysicalItemPF2e } from "#item/physical/index.js";
 import { SpellPF2e } from "#item/spell/document.js";
 import { MagicTradition } from "#item/spell/types.js";
@@ -55,7 +55,7 @@ interface CastOptions {
     rank?: OneToTen;
     consume?: boolean;
     message?: boolean;
-    rollMode?: RollMode;
+    messageMode?: ChatMessageMode;
 }
 type UnusedProperties = "actor" | "spells" | "getSheetData" | "cast" | "canCast";
 type OptionalProperties = "isFlexible" | "isFocusPool" | "isInnate" | "isPrepared" | "isRitual" | "isSpontaneous";

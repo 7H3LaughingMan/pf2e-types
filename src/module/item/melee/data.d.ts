@@ -75,6 +75,7 @@ type NPCAttackSystemSchema = Omit<ItemSystemSchema, "traits"> & {
         true,
         true
     >;
+    subjectToMAP: fields.BooleanField;
 };
 type EffectAreaSchema = {
     type: fields.StringField<EffectAreaShape, EffectAreaShape, true, false, true>;

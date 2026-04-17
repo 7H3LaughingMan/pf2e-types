@@ -3,11 +3,9 @@ import { AttributeBoosts } from "#actor/character/data.js";
 import { AttributeString } from "#actor/types.js";
 import { AncestryPF2e, BackgroundPF2e, ClassPF2e } from "#item";
 import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/sheet/mixin.svelte.js";
-
 interface AttributeBuilderConfiguration extends fa.ApplicationConfiguration {
     actor: CharacterPF2e;
 }
-
 declare class AttributeBuilder extends SvelteApplicationMixin<
     AbstractConstructorOf<fa.api.ApplicationV2> & { DEFAULT_OPTIONS: DeepPartial<AttributeBuilderConfiguration> }
 >(fa.api.ApplicationV2) {
@@ -41,12 +39,10 @@ declare class AttributeBuilder extends SvelteApplicationMixin<
     handleManualModChange(attribute: AttributeString, value: number): Promise<void>;
     toggleManualMode(): Promise<void>;
 }
-
 interface AttributeBuilderContext extends SvelteApplicationRenderContext {
     foundryApp: AttributeBuilder;
     state: AttributeBuilderState;
 }
-
 interface AttributeBuilderState {
     attributeModifiers: Record<
         AttributeString,
@@ -65,6 +61,5 @@ interface AttributeBuilderState {
     abpEnabled: boolean;
     gradualBoostsVariant: boolean;
 }
-
 export { AttributeBuilder };
 export type { AttributeBuilderContext, AttributeBuilderState };

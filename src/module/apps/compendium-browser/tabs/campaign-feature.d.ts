@@ -1,7 +1,7 @@
 import { CompendiumBrowser } from "../browser.js";
 import { ContentTabName } from "../data.js";
 import { CompendiumBrowserTab } from "./base.svelte.js";
-import { CampaignFeatureFilters, CompendiumBrowserIndexData } from "./data.js";
+import { CampaignFeatureFilters } from "./data.js";
 export declare class CompendiumBrowserCampaignFeaturesTab extends CompendiumBrowserTab {
     tabName: ContentTabName;
     tabLabel: string;
@@ -10,6 +10,5 @@ export declare class CompendiumBrowserCampaignFeaturesTab extends CompendiumBrow
     storeFields: string[];
     constructor(browser: CompendiumBrowser);
     protected loadData(): Promise<void>;
-    protected filterIndexData(entry: CompendiumBrowserIndexData): boolean;
     protected prepareFilterData(): CampaignFeatureFilters;
 }

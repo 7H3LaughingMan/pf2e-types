@@ -3,7 +3,6 @@ import { ApplicationConfiguration } from "#client/applications/_types.mjs";
 import { ChatContextFlag } from "#module/chat-message/data.js";
 import { ChatMessagePF2e } from "#module/chat-message/document.js";
 import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/sheet/mixin.svelte.js";
-
 declare class RollInspector extends SvelteApplicationMixin(fa.api.ApplicationV2) {
     static DEFAULT_OPTIONS: {
         position: {
@@ -25,11 +24,9 @@ declare class RollInspector extends SvelteApplicationMixin(fa.api.ApplicationV2)
     );
     protected _prepareContext(): Promise<RollInspectorContext>;
 }
-
 interface RollInspectorContext extends SvelteApplicationRenderContext {
     state: RollInspectorState;
 }
-
 interface RollInspectorState {
     context: ChatContextFlag;
     domains: string[];
@@ -41,6 +38,5 @@ interface RollInspectorState {
         options: string[];
     }[];
 }
-
 export { RollInspector };
 export type { RollInspectorContext };

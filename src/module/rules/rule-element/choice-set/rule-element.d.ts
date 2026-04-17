@@ -3,14 +3,13 @@ import { ItemPF2e } from "#item";
 import { PickableThing } from "#module/apps/pick-a-thing-prompt/app.js";
 import { RuleElement, RuleElementOptions } from "../base.js";
 import { ModelPropsFromRESchema } from "../data.js";
-import { AllowedDropsData, ChoiceSetPackQuery, ChoiceSetSchema, ChoiceSetSource, UninflatedChoiceSet } from "./data.js";
+import { AllowedDropsData, ChoiceSetPackQuery, ChoiceSetSchema, ChoiceSetSource } from "./data.js";
 /**
  * Present a set of options to the user and assign their selection to an injectable property
  * @category RuleElement
  */
 declare class ChoiceSetRuleElement extends RuleElement<ChoiceSetSchema> {
     #private;
-    choices: UninflatedChoiceSet;
     flag: string;
     allowedDrops: AllowedDropsData | null;
     allowNoSelection: boolean;

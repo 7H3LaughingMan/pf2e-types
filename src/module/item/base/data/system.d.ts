@@ -32,7 +32,7 @@ interface TraitConfig {
     tracking?: number;
     versatile?: DamageType[];
     volley?: number;
-    [key: string]: unknown | undefined;
+    [key: string]: unknown;
 }
 interface ModularConfig {
     damageType: DamageType;

@@ -1,7 +1,6 @@
 import { ActorPF2e } from "#actor/base.js";
 import { ItemPF2e } from "#item/base/document.js";
 import { ActiveEffectPF2e } from "#module/active-effect.js";
-import { MeasuredTemplatePF2e } from "#module/canvas/measured-template.js";
 import { ChatMessagePF2e } from "#module/chat-message/document.js";
 import { CombatantPF2e } from "#module/encounter/combatant.js";
 import { EncounterPF2e } from "#module/encounter/document.js";
@@ -36,7 +35,6 @@ declare global {
         JournalEntryCategory: typeof foundry.documents.JournalEntryCategory;
         JournalEntryPage: typeof foundry.documents.JournalEntryPage;
         Macro: typeof MacroPF2e;
-        MeasuredTemplate: typeof MeasuredTemplatePF2e;
         Note: typeof foundry.documents.NoteDocument;
         Playlist: typeof foundry.documents.Playlist;
         PlaylistSound: typeof foundry.documents.PlaylistSound;

@@ -1,8 +1,8 @@
 import { ItemPF2e } from "#item";
 import { RuleElement, RuleElementSource } from "#module/rules/index.js";
 import { RuleElementSchema } from "#module/rules/rule-element/data.js";
-import { LaxSchemaField } from "#system/schema-data-fields.js";
 import { ItemSheetPF2e } from "../index.js";
+import fields = foundry.data.fields;
 interface RuleElementFormOptions<TSource extends RuleElementSource, TObject extends RuleElement | null> {
     sheet: ItemSheetPF2e<ItemPF2e>;
     index: number;
@@ -17,7 +17,7 @@ declare class RuleElementForm<TSource extends RuleElementSource = RuleElementSou
     index: number;
     rule: TSource;
     object: TObject;
-    schema: LaxSchemaField<RuleElementSchema> | null;
+    schema: fields.DataModelSchemaField<RuleElementSchema> | null;
     element: HTMLElement;
     /** Tab configuration data */
     protected tabs: RuleElementFormTabData | null;
@@ -53,7 +53,6 @@ interface RuleElementFormSheetData<TSource extends RuleElementSource, TObject ex
     basePath: string;
     fields: RuleElementSchema | undefined;
     /** A collection of additional handlebars functions */
-
     form: Record<string, Function>;
     validationFailures: string[];
     hiddenFields: string[];

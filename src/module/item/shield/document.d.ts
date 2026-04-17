@@ -7,6 +7,7 @@ import { EnrichmentOptionsPF2e } from "#system/text-editor.js";
 import { ShieldSource, ShieldSystemData } from "./data.js";
 import { BaseShieldType, ShieldTrait } from "./types.js";
 declare class ShieldPF2e<TParent extends ActorPF2e | null = ActorPF2e | null> extends PhysicalItemPF2e<TParent> {
+    #private;
     static get validTraits(): Record<ShieldTrait, string>;
     get baseType(): BaseShieldType | null;
     get isBuckler(): boolean;

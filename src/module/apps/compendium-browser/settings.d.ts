@@ -7,5 +7,4 @@ declare class CompendiumBrowserSettingsApp extends fa.api.HandlebarsApplicationM
     protected _attachPartListeners(partId: string, html: HTMLElement, options: fa.api.HandlebarsRenderOptions): void;
     protected _prepareContext(_options: fa.api.HandlebarsRenderOptions): Promise<object>;
 }
-
 export { CompendiumBrowserSettingsApp };

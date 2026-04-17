@@ -28,6 +28,10 @@ declare class CombatantPF2e<
     get roundOfLastTurn(): number | null;
     /** Can the user see this combatant's name? */
     get playersCanSeeName(): boolean;
+    get actor(): ActorPF2e | null;
+    get token(): TTokenDocument;
+    /** All tokens managed by this one combatant, including troop segments */
+    get tokens(): TokenDocumentPF2e[];
     overridePriority(initiative: number): number | null;
     hasHigherInitiative(
         this: RolledCombatant<NonNullable<TParent>>,
@@ -38,6 +42,7 @@ declare class CombatantPF2e<
         },
     ): boolean;
     startTurn(): Promise<void>;
+    /** Runs end turn events. These run per represented actor, so for troops it'll run per segment. */
     endTurn(options: { round: number }): Promise<void>;
     prepareBaseData(): void;
     /** Toggle the defeated status of this combatant, applying or removing the overlay icon on its token */
@@ -63,6 +68,8 @@ interface CombatantPF2e<
 }
 type CombatantFlags = DocumentFlags & {
     [SYSTEM_ID]: {
+        /** The id of the associated troop. Unless it is a linked token, this should restrict to per scene */
+        troop?: string;
         initiativeStatistic: SkillSlug | "perception" | null;
         roundOfLastTurn: number | null;
         roundOfLastTurnEnd: number | null;

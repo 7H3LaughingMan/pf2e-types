@@ -1,8 +1,9 @@
 import { CompendiumIndexData } from "#client/documents/collections/compendium-collection.mjs";
+import { Predicate } from "#system/predication.js";
 import { default as MiniSearch } from "minisearch";
 import { CompendiumBrowser, CompendiumBrowserOpenTabOptions } from "../browser.js";
 import { BrowserTabs, ContentTabName } from "../data.js";
-import { BrowserFilter, CheckboxOptions, CompendiumBrowserIndexData, RangesInputData, TraitData } from "./data.js";
+import { BrowserFilter, CheckboxOptions, CompendiumBrowserIndexData, RangesInputData } from "./data.js";
 export declare abstract class CompendiumBrowserTab {
     #private;
     /** A reference to the parent CompendiumBrowser */
@@ -55,16 +56,18 @@ export declare abstract class CompendiumBrowserTab {
     protected abstract loadData(): Promise<void>;
     /** Prepare the the filterData object of this tab */
     protected abstract prepareFilterData(): this["filterData"];
-    /** Filter indexData */
-    protected abstract filterIndexData(entry: CompendiumBrowserIndexData): boolean;
-    protected filterTraits(traits: string[], selected: TraitData["selected"], condition: TraitData["conjunction"]): boolean;
+    /** Build a `Predicate` from the applied filters */
+    protected buildPredicate(): Predicate;
     /** Sort result array by name, level or price */
     protected sortResult(result: CompendiumBrowserIndexData[]): CompendiumBrowserIndexData[];
     /** Return new range filter values based on input */
     parseRangeFilterInput(_name: string, lower: string, upper: string): RangesInputData["values"];
-    /** Check if an array includes any keys of another array */
-    protected arrayIncludes(array: string[], other: string[]): boolean;
-    /** Generates a localized and sorted CheckBoxOptions object from config data */
+    /** Generates a localized and sorted options from config data
+     * @param configData The object to convert to options
+     * @param [options] Additional options for the conversion
+     * @param [options.prefix] An additional prefix for these options. The final value will be `filterPrefix:thisPrefix:option`
+     * @param [options.sort] Wether to sort the resulting options alphabetically
+     */
     protected generateCheckboxOptions(
         configData: Record<
             string,
@@ -73,17 +76,28 @@ export declare abstract class CompendiumBrowserTab {
                   label: string;
               }
         >,
-        sort?: boolean,
+        {
+            prefix,
+            sort,
+        }?: {
+            prefix?: string;
+            sort?: boolean;
+        },
     ): CheckboxOptions;
     protected generateMultiselectOptions<T extends string>(
         optionsRecord: Record<T, string>,
-        sort?: boolean,
+        options?: {
+            prefix?: string;
+            sort?: boolean;
+        },
     ): {
         value: T;
         label: string;
     }[];
     /** Generates a sorted CheckBoxOptions object from a sources Set */
     protected generateSourceCheckboxOptions(sources: Set<string>): CheckboxOptions;
+    /** Adds the publication source to `publications` if available and returns a `source` option for convenience */
+    protected preparePublicationSource(pubSource: string, publications: Set<string>): string;
     /** Provide a best-effort sort of an object (e.g. CONFIG.PF2E.monsterTraits) */
     protected sortedConfig(obj: Record<string, string>): Record<string, string>;
     /** Ensure all index fields are present in the index data */

@@ -1,7 +1,6 @@
 import { ApplicationRenderContext } from "#client/applications/_module.mjs";
 import { ItemPF2e, PhysicalItemPF2e } from "#item";
 import { UserPF2e } from "#module/user/document.js";
-
 /** A prompt for the user to select an item to receive an attachment */
 declare class ItemAttacher extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
@@ -14,7 +13,6 @@ declare class ItemAttacher extends fa.api.HandlebarsApplicationMixin(fa.api.Appl
     protected _canRender(options: fa.ApplicationRenderOptions): boolean | void;
     _prepareContext(): Promise<ItemAttacherContext>;
 }
-
 interface ItemAttacherContext extends ApplicationRenderContext {
     choices: {
         label: string;
@@ -25,5 +23,4 @@ interface ItemAttacherContext extends ApplicationRenderContext {
     user: UserPF2e;
     requiresCrafting: boolean;
 }
-
 export { ItemAttacher };

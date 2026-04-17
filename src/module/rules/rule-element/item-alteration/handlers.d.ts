@@ -49,8 +49,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "ac-bonus": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -90,8 +90,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "area-size": ItemAlterationHandler<{
         itemType: fields.StringField<
             "spell",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -131,8 +131,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "badge-max": ItemAlterationHandler<{
         itemType: fields.StringField<
             "effect",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -172,8 +172,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "badge-value": ItemAlterationHandler<{
         itemType: fields.StringField<
             "condition" | "effect",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -213,8 +213,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     bulk: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "consumable" | "ammo" | "backpack" | "book" | "equipment" | "treasure" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -248,8 +248,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     capacity: ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -289,8 +289,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     category: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -324,8 +324,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "check-penalty": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -365,8 +365,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "damage-dice-faces": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -401,13 +401,13 @@ declare const ITEM_ALTERATION_HANDLERS: {
             false,
             false
         >;
-        value: StrictNumberField<4 | 6 | 8 | 10 | 12, 4 | 6 | 8 | 10 | 12, true, true, true>;
+        value: StrictNumberField<10 | 4 | 8 | 6 | 12, 10 | 4 | 8 | 6 | 12, true, true, true>;
     }>;
     "damage-dice-number": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -447,8 +447,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "damage-type": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -504,8 +504,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "defense-passive": ItemAlterationHandler<{
         itemType: fields.StringField<
             "spell",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -538,8 +538,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     }>;
     description: ItemAlterationHandler<{
         itemType: fields.StringField<
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -563,8 +563,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
             | "melee"
             | "spell"
             | "spellcastingEntry",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -615,8 +615,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "dex-cap": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -656,8 +656,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "focus-point-cost": ItemAlterationHandler<{
         itemType: fields.StringField<
             "spell",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -697,8 +697,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     grade: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -738,8 +738,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     group: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -773,8 +773,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     hardness: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "consumable" | "ammo" | "backpack" | "book" | "equipment" | "treasure" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -814,8 +814,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "hp-max": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "consumable" | "ammo" | "backpack" | "book" | "equipment" | "treasure" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -855,8 +855,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "material-type": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "consumable" | "ammo" | "backpack" | "book" | "equipment" | "treasure" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -917,8 +917,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "pd-recovery-dc": ItemAlterationHandler<{
         itemType: fields.StringField<
             "condition",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -958,8 +958,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "persistent-damage": ItemAlterationHandler<{
         itemType: fields.StringField<
             "condition",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1000,8 +1000,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     rarity: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield" | "consumable" | "ammo" | "backpack" | "book" | "equipment" | "treasure" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1035,8 +1035,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "range-increment": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1076,8 +1076,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "range-max": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1117,8 +1117,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "frequency-max": ItemAlterationHandler<{
         itemType: fields.StringField<
             "action" | "feat",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1158,8 +1158,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "frequency-per": ItemAlterationHandler<{
         itemType: fields.StringField<
             "action" | "feat",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1198,8 +1198,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     }>;
     "other-tags": ItemAlterationHandler<{
         itemType: fields.StringField<
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1223,8 +1223,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
             | "melee"
             | "spell"
             | "spellcastingEntry",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1263,8 +1263,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     }>;
     name: ItemAlterationHandler<{
         itemType: fields.StringField<
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1288,8 +1288,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
             | "melee"
             | "spell"
             | "spellcastingEntry",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1323,8 +1323,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "runes-potency": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1358,8 +1358,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "runes-resilient": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1393,8 +1393,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "runes-striking": ItemAlterationHandler<{
         itemType: fields.StringField<
             "weapon",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1428,8 +1428,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     "speed-penalty": ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor" | "shield",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1469,8 +1469,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     strength: ItemAlterationHandler<{
         itemType: fields.StringField<
             "armor",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1509,8 +1509,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
     }>;
     traits: ItemAlterationHandler<{
         itemType: fields.StringField<
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"
@@ -1531,8 +1531,8 @@ declare const ITEM_ALTERATION_HANDLERS: {
             | "kit"
             | "melee"
             | "spell",
-            | "action"
             | "background"
+            | "action"
             | "armor"
             | "shield"
             | "consumable"

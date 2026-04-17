@@ -22,6 +22,7 @@ declare const USAGES: {
     "affixed-to-a-ranged-weapon": string;
     "affixed-to-a-shield": string;
     "affixed-to-a-shield-or-weapon": string;
+    "affixed-to-a-slashing-weapon": string;
     "affixed-to-a-thrown-weapon": string;
     "affixed-to-a-two-handed-firearm-or-crossbow": string;
     "affixed-to-an-innovation": string;

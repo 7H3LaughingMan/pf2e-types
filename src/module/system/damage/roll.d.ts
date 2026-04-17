@@ -29,7 +29,6 @@ declare class DamageRoll extends AbstractDamageRoll {
     static CHAT_TEMPLATE: string;
     static TOOLTIP_TEMPLATE: string;
     static parse(formula: string, data: Record<string, unknown>): InstancePool[];
-
     constructor(formula: string, data?: {}, options?: DamageRollData);
     get roller(): UserPF2e | null;
     /** Ensure the roll is parsable as `PoolTermData` */
@@ -79,7 +78,6 @@ declare class DamageInstance extends AbstractDamageRoll {
     persistent: boolean;
     materials: Set<MaterialDamageEffect>;
     critRule: CriticalDoublingRule | null;
-
     constructor(formula: string, data?: {}, { flavor, ...options }?: DamageInstanceData);
     static parse(formula: string, data: Record<string, unknown>): RollTerm[];
     static fromData<TRoll extends Roll>(this: ConstructorOf<TRoll>, data: RollJSON): TRoll;

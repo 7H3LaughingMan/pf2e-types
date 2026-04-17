@@ -1,4 +1,4 @@
-import { Action, SimpleAction, SingleCheckAction } from "#actor/actions/index.js";
+import { Action } from "#actor/actions/index.js";
 import * as balance from "./acrobatics/balance.js";
 import * as maneuverInFlight from "./acrobatics/maneuver-in-flight.js";
 import * as squeeze from "./acrobatics/squeeze.js";
@@ -108,4 +108,4 @@ declare const SystemActions: Action[];
  * Actions that are only relevant in the starfinder system and sf2e anachronism.
  * @todo Some of these are present in pf2e as well but require more complicated handling.
  */
-declare const SF2eOnlySystemActions: (SimpleAction | SingleCheckAction)[];
+declare const SF2eOnlySystemActions: (import("../../actor/actions/index.ts").SimpleAction | import("../../actor/actions/index.ts").SingleCheckAction)[];

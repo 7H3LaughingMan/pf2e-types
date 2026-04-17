@@ -68,7 +68,6 @@ type AllowedDropsSchema = {
 };
 type AllowedDropsData = fields.ModelPropsFromSchema<AllowedDropsSchema>;
 type ChoiceSetObject = ChoiceSetOwnedItems | ChoiceSetAttacks | ChoiceSetPackQuery | ChoiceSetConfig;
-type UninflatedChoiceSet = string | PickableThing[] | ChoiceSetObject;
 interface ChoiceSetSource extends RuleElementSource {
     choices?: unknown;
     flag?: unknown;
@@ -125,14 +124,4 @@ interface ChoiceSetConfig {
     attacks?: never;
     unarmedAttacks?: never;
 }
-export type {
-    AllowedDropsData,
-    ChoiceSetAttacks,
-    ChoiceSetConfig,
-    ChoiceSetObject,
-    ChoiceSetOwnedItems,
-    ChoiceSetPackQuery,
-    ChoiceSetSchema,
-    ChoiceSetSource,
-    UninflatedChoiceSet,
-};
+export type { AllowedDropsData, ChoiceSetAttacks, ChoiceSetConfig, ChoiceSetObject, ChoiceSetOwnedItems, ChoiceSetPackQuery, ChoiceSetSchema, ChoiceSetSource };

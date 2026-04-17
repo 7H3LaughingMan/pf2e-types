@@ -5,7 +5,6 @@ import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/
 import { UserPF2e } from "#module/user/document.js";
 import { localizer } from "#util";
 import { default as MiniSearch } from "minisearch";
-
 /** An application to facilitate trading between two creature actors */
 declare class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
     #private;
@@ -21,7 +20,7 @@ declare class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
         };
     };
     /** Reusable localization shorthand function */
-    static localize: (stringId: string, data?: Record<string, Maybe<string | number | boolean>> | undefined) => string;
+    static localize: (stringId: string, data?: Record<string, unknown> | undefined) => string;
     protected root: import("svelte/legacy").LegacyComponentType;
     protected $state: TradeDialogState;
     get title(): string;
@@ -41,9 +40,7 @@ declare class TradeDialog extends SvelteApplicationMixin(fa.api.ApplicationV2) {
     close(options?: TradeDialogClosingOptions): Promise<this>;
     static handleQuery: (data: TradeQueryData) => Promise<TradeQueryResponse>;
 }
-
 type TradeActor = CharacterPF2e | NPCPF2e;
-
 interface MaybeValidConstructorParams extends DeepPartial<fa.ApplicationConfiguration> {
     self: {
         actor: ActorPF2e | null;
@@ -57,7 +54,6 @@ interface MaybeValidConstructorParams extends DeepPartial<fa.ApplicationConfigur
         gift?: number;
     };
 }
-
 interface ConstructorParams extends MaybeValidConstructorParams {
     self: {
         actor: TradeActor;
@@ -72,13 +68,11 @@ interface ConstructorParams extends MaybeValidConstructorParams {
         gift?: number;
     };
 }
-
 interface TradeItemData extends Pick<PhysicalItemPF2e, "id" | "name" | "img" | "quantity"> {
     readonly visible: boolean;
     marked: number;
     matchScore: number;
 }
-
 interface MaybeTradeInitiationData {
     self: {
         actor?: ActorPF2e | null;
@@ -90,7 +84,6 @@ interface MaybeTradeInitiationData {
         user?: UserPF2e;
     };
 }
-
 interface TradeRequestData extends MaybeTradeInitiationData {
     self: {
         actor: TradeActor;
@@ -102,7 +95,6 @@ interface TradeRequestData extends MaybeTradeInitiationData {
         user: UserPF2e;
     };
 }
-
 interface TradeDialogState {
     self: {
         actor: Pick<ActorPF2e, "id" | "name" | "img">;
@@ -115,7 +107,6 @@ interface TradeDialogState {
         accepted: boolean;
     };
 }
-
 interface TradeDialogRenderContext extends SvelteApplicationRenderContext {
     foundryApp: TradeDialog;
     state: TradeDialogState;
@@ -123,18 +114,14 @@ interface TradeDialogRenderContext extends SvelteApplicationRenderContext {
     searchEngine: MiniSearch;
     localize: ReturnType<typeof localizer>;
 }
-
 interface QueryResponseOK {
     ok: true;
 }
-
 interface QueryResponseNotOK {
     ok: false;
     message: string;
 }
-
 type TradeQueryResponse = QueryResponseOK | QueryResponseNotOK;
-
 interface RequestQueryData {
     action: "request";
     initiator: {
@@ -147,24 +134,19 @@ interface RequestQueryData {
         actor: ActorUUID;
     };
 }
-
 interface UpdateQueryData {
     action: "update";
     marked?: Record<string, number>;
     accepted?: boolean;
 }
-
 interface AbortQueryData {
     action: "abort";
     message?: string;
 }
-
 type TradeQueryData = RequestQueryData | UpdateQueryData | AbortQueryData;
-
 interface TradeDialogClosingOptions extends fa.ApplicationClosingOptions {
     aborted?: boolean;
     success?: boolean;
 }
-
 export { TradeDialog };
 export type { TradeDialogRenderContext, TradeItemData, TradeQueryData, TradeQueryResponse, TradeRequestData };

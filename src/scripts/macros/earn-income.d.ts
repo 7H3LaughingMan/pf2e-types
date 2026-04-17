@@ -1,11 +1,9 @@
 import { ActorPF2e, CharacterPF2e } from "#actor";
 import { Coins } from "#item/physical/coins.js";
 import { OneToFour } from "#module/data.js";
-
 interface ConstructorParams extends DeepPartial<fa.ApplicationConfiguration> {
     actor: CharacterPF2e;
 }
-
 declare class EarnIncomeDialog extends fa.api.HandlebarsApplicationMixin(fa.api.ApplicationV2) {
     #private;
     constructor(config: ConstructorParams);
@@ -159,5 +157,4 @@ declare class EarnIncomeDialog extends fa.api.HandlebarsApplicationMixin(fa.api.
     static create(actor?: Maybe<ActorPF2e>): Promise<EarnIncomeDialog> | null;
     protected _prepareContext(options: fa.ApplicationRenderOptions): Promise<fa.ApplicationRenderContext>;
 }
-
 export { EarnIncomeDialog };

@@ -87,6 +87,7 @@ export declare const ARMOR_PROPERTY_RUNES: {
 declare const RUNE_DATA: {
     armor: {
         property: {
+            ready: ArmorPropertyRuneData<"ready">;
             acidResistant: ArmorPropertyRuneData<"acidResistant">;
             advancing: ArmorPropertyRuneData<"advancing">;
             aimAiding: ArmorPropertyRuneData<"aimAiding">;
@@ -133,7 +134,6 @@ declare const RUNE_DATA: {
             portable: ArmorPropertyRuneData<"portable">;
             quenching: ArmorPropertyRuneData<"quenching">;
             raiment: ArmorPropertyRuneData<"raiment">;
-            ready: ArmorPropertyRuneData<"ready">;
             rockBraced: ArmorPropertyRuneData<"rockBraced">;
             shadow: ArmorPropertyRuneData<"shadow">;
             sinisterKnight: ArmorPropertyRuneData<"sinisterKnight">;

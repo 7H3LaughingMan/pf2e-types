@@ -5,7 +5,6 @@ import { SvelteApplicationMixin, SvelteApplicationRenderContext } from "#module/
 import { BrowserTab, BrowserTabs, ContentTabName, PackInfo, SourceInfo, TabData, TabName } from "./data.js";
 import { PackLoader } from "./loader.js";
 import { BrowserFilter } from "./tabs/data.js";
-
 declare class CompendiumBrowser extends SvelteApplicationMixin(fa.api.ApplicationV2) {
     #private;
     /** The amount of rendered result items for initial loading and per load operation */
@@ -33,29 +32,23 @@ declare class CompendiumBrowser extends SvelteApplicationMixin(fa.api.Applicatio
     loadedPacksAll(): string[];
     resetInitializedTabs(): Promise<void>;
 }
-
 interface CompendiumBrowserContext extends SvelteApplicationRenderContext {
     state: CompendiumBrowserState;
 }
-
 interface CompendiumBrowserState {
     /** Changing this will trigger a tab rerender. An empty string will show the landing page */
     activeTabName: ContentTabName | "";
     /** The result list HTML element */
     resultList: HTMLUListElement;
 }
-
 type CompendiumBrowserSettings = TabData<Record<string, PackInfo | undefined>>;
-
 type CompendiumBrowserSourcesList = Record<string, SourceInfo | undefined>;
-
 interface CompendiumBrowserSources {
     ignoreAsGM: boolean;
     showEmptySources: boolean;
     showUnknownSources: boolean;
     sources: CompendiumBrowserSourcesList;
 }
-
 interface CompendiumBrowserOpenTabOptions {
     /** Optional filter data for the opened tab */
     filter?: BrowserFilter;
@@ -64,6 +57,5 @@ interface CompendiumBrowserOpenTabOptions {
     /** Only show the given tabs in the navigation element. This will always include the openend tab */
     showTabs?: ContentTabName[];
 }
-
 export { CompendiumBrowser };
 export type { CompendiumBrowserContext, CompendiumBrowserOpenTabOptions, CompendiumBrowserSettings, CompendiumBrowserSources, CompendiumBrowserState };
