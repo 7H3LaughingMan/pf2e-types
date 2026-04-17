@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@7h3laughingman/foundry-types':
-        specifier: ~14.360.2
-        version: 14.360.2(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)
+        specifier: ~14.360.4
+        version: 14.360.4(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)
       '@codemirror/lang-html':
         specifier: ^6.4.11
         version: 6.4.11
@@ -174,8 +174,8 @@ importers:
 
 packages:
 
-  '@7h3laughingman/foundry-types@14.360.2':
-    resolution: {integrity: sha512-Qrx80JOlfLFvX9HzY0nCqsoCIR9S8Wa9W7bSvB2SCFBJllaRGazIql68czDUWAunTWuYYvHiSEPusX8mF+z8vQ==}
+  '@7h3laughingman/foundry-types@14.360.4':
+    resolution: {integrity: sha512-uksHV0QvOoFa9rGJumfSN5/7wktTdJxoup0HQWFg2mjz78xHy8t5J4rJ7ZkSo7/EDWkyKnJpEk/pyYnLOQa+pQ==}
     engines: {node: '>=24'}
 
   '@codemirror/autocomplete@6.20.1':
@@ -1526,7 +1526,7 @@ packages:
 
 snapshots:
 
-  '@7h3laughingman/foundry-types@14.360.2(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)':
+  '@7h3laughingman/foundry-types@14.360.4(@pixi/constants@7.4.3)(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/graphics@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))))(@pixi/math@7.4.3)(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/ticker@7.4.3)':
     dependencies:
       '@codemirror/lang-html': 6.4.11
       '@codemirror/lang-javascript': 6.2.5

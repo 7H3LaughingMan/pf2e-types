@@ -8,7 +8,7 @@ for (const file of files) {
 
     // Import - Double Quotes
     data = data.replace(/^import (.*?) from '(.*?)';$/gm, `import $1 from "$2";`);
-    data = data.replace(/import\('(.*?)'\)/gm, `import\("$1"\)`);
+    data = data.replace(/import\('(.*?)'\)/gm, `import("$1")`);
 
     // Import - *.d.ts
     data = data.replace(/^import (.*?) from "(.*?)\.d\.ts";$/gm, `import $1 from "$2.js";`);
