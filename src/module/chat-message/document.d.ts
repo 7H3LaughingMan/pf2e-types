@@ -37,6 +37,7 @@ declare class ChatMessagePF2e extends ChatMessage<UserPF2e | null> {
     get token(): TokenDocumentPF2e<ScenePF2e> | null;
     getRollData(): Record<string, unknown>;
     renderHTML(options?: { canDelete?: boolean; canClose?: boolean }): Promise<HTMLElement>;
+    updateSource(data?: Record<string, unknown>, options?: DocumentSourceUpdateContext): DeepPartial<this["_source"]>;
     protected _onCreate(
         data: this["_source"],
         options: ChatMessageCreateCallbackOptions & {
